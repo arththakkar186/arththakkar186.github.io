@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arth Thakkar</title>
+<meta name="description" content="Arth Thakkar is an identity and access management and IT infrastructure professional in Toronto, specializing in Microsoft Entra ID, Microsoft 365 and enterprise support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky nav over three views. Home opens with a staff ID card beside the intro, then impact numbers and three case studies. */
+:root{
+  --bg:#F4F6F5; --surface:#FFFFFF; --ink:#12201C; --muted:#56655F; --line:#DCE3E0;
+  --accent:#1D6A5C; --accent-ink:#FFFFFF; --accent-soft:#E2EFEB; --badge:#B98030; --glow:rgba(29,106,92,.10);
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1513; --surface:#151F1C; --ink:#E7EFEB; --muted:#9BACA5; --line:#25322E;
+  --accent:#6CC4B2; --accent-ink:#0E1513; --accent-soft:#1A302B; --badge:#E0A84F; --glow:rgba(108,196,178,.08); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1513; --surface:#151F1C; --ink:#E7EFEB; --muted:#9BACA5; --line:#25322E;
+  --accent:#6CC4B2; --accent-ink:#0E1513; --accent-soft:#1A302B; --badge:#E0A84F; --glow:rgba(108,196,178,.08); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(56rem 36rem at 90% -10%,var(--glow),transparent 70%);background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:24px;padding-block:14px}
+.mark{font:600 20px/1 var(--display);letter-spacing:-.01em;color:var(--ink);text-decoration:none;margin-right:auto;white-space:nowrap}
+.mark .short{display:none}
+nav{display:flex;gap:clamp(14px,3vw,32px)}
+nav a{font-weight:500;font-size:15px;color:var(--muted);text-decoration:none;padding-block:6px;border-bottom:2px solid transparent;transition:color .15s}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent)}
+nav a:hover{color:var(--ink)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px/1 var(--body);padding:12px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;transition:border-color .15s,transform .15s,background .15s;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{background:color-mix(in srgb,var(--accent) 88%,var(--ink))}
+.btn.small{padding:9px 14px;font-size:13px}
+.btn svg{width:16px;height:16px;flex:none}
+
+main{padding-block:clamp(44px,8vw,96px) 72px}
+.view{animation:rise .4s ease both}
+@keyframes rise{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view{animation:none} html{scroll-behavior:auto}}
+
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.015em;text-wrap:balance;margin:0}
+h1{font-size:clamp(42px,6.6vw,70px);line-height:1.02}
+h2{font-size:clamp(30px,4vw,42px);line-height:1.1}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.lede{font-size:clamp(17px,1.9vw,19px);color:var(--muted);max-width:33em;text-wrap:pretty}
+.head{display:grid;gap:12px;margin-bottom:28px}
+.head p:not(.eyebrow){color:var(--muted);max-width:40em}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:clamp(36px,6vw,80px);align-items:center}
+.idcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 14px 18px;box-shadow:0 30px 60px -32px rgba(10,30,25,.35);max-width:290px;width:100%;position:relative}
+.idcard::before{content:"";position:absolute;top:-9px;left:50%;width:52px;height:12px;margin-left:-26px;border-radius:7px;background:var(--line);border:1px solid var(--surface)}
+.idcard .stripe{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent) 0 72%,var(--badge) 72%);margin-bottom:12px}
+.photo{aspect-ratio:4/5;max-width:100%;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{font:600 76px/1 var(--display);color:var(--accent);letter-spacing:-.02em}
+.idcard dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:14px 4px 0;font:500 11px/1.45 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.idcard dt{color:var(--muted)} .idcard dd{margin:0;color:var(--ink)}
+.hero-text{display:grid;gap:22px;min-width:0}
+.now{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+.now i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
+.now b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.contact{font:500 13px/1.4 var(--mono);color:var(--muted);user-select:all}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:clamp(56px,8vw,88px)}
+.stats div{padding:24px;display:grid;gap:8px;align-content:start}
+.stats div+div{border-left:1px solid var(--line)}
+.stats b{font:600 34px/1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stats small{color:var(--muted);font-size:14px;line-height:1.5}
+
+/* case studies */
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:12px;align-content:start}
+.case .where{font:500 12px/1.5 var(--mono);color:var(--muted);letter-spacing:.04em}
+.case p{color:var(--muted);font-size:15px}
+.case .result{color:var(--ink);font-weight:600;font-size:15px;border-top:1px solid var(--line);padding-top:12px}
+.block{margin-top:clamp(64px,9vw,104px)}
+
+/* experience */
+.timeline{display:grid;gap:16px}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:clamp(16px,3vw,40px)}
+.meta{display:grid;gap:6px;align-content:start}
+.meta .co{font-weight:600}
+.meta .when{font:500 12px/1.5 var(--mono);color:var(--muted);letter-spacing:.03em}
+.current{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:5px 9px;justify-self:start;margin-top:4px}
+.job ul{margin:0;padding-left:18px;display:grid;gap:9px}
+.job li{padding-left:2px}
+.job li::marker{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font:500 12px/1 var(--mono);padding:7px 10px;border-radius:7px;background:var(--accent-soft);color:var(--accent)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:8px;align-content:start}
+.tile .code{font:500 13px/1 var(--mono);color:var(--accent)}
+.tile .sub{color:var(--muted);font-size:15px}
+.status{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;border-radius:999px;padding:5px 9px;justify-self:start;margin-top:4px}
+.status.done{color:var(--accent);background:var(--accent-soft)}
+.status.wip{color:var(--badge);border:1px solid currentColor}
+.cta{margin-top:clamp(56px,8vw,88px);background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.cta h2{font-size:clamp(24px,3vw,32px)}
+.cta p{color:var(--muted);margin-top:6px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:start}
+.prose{display:grid;gap:18px;max-width:36em}
+.prose p{text-wrap:pretty}
+.principles{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:18px}
+.principle{display:grid;gap:4px}
+.principle+.principle{border-top:1px solid var(--line);padding-top:18px}
+.principle h3{font-size:19px}
+.principle p{color:var(--muted);font-size:15px}
+.skill h3{font-size:18px}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{padding-block:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer nav{gap:20px}
+footer a{color:var(--muted);text-decoration:none;font-size:14px}
+footer a:hover{color:var(--ink)}
+
+@media (max-width:860px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats div:nth-child(3){border-left:0}
+  .stats div:nth-child(n+3){border-top:1px solid var(--line)}
+  .cases,.grid3{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .hero,.job,.about{grid-template-columns:minmax(0,1fr)}
+  .idcard{margin-inline:auto;max-width:250px}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  header .btn{display:none}
+}
+@media (max-width:440px){
+  .mark .full{display:none} .mark .short{display:inline}
+  nav a{font-size:14px}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .stats div+div{border-left:0;border-top:1px solid var(--line)}
+  .actions .btn{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#home"><span class="full">Arth Thakkar</span><span class="short">AT</span></a>
+    <nav aria-label="Main">
+      <a href="#home" data-view="home">Home</a>
+      <a href="#experience" data-view="experience">Experience</a>
+      <a href="#about" data-view="about">About</a>
+    </nav>
+    <a class="btn small primary" href="Arth_Thakkar_Resume.pdf" target="_blank" rel="noopener" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+      Resume</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section class="view" id="view-home" data-name="home">
+    <div class="hero">
+      <div class="idcard" aria-label="Profile card">
+        <div class="stripe"></div>
+        <div class="photo">
+          <!-- To add your photo, replace the next line with: <img src="photo.jpg" alt="Arth Thakkar"> -->
+          <span aria-hidden="true">AT</span>
+        </div>
+        <dl>
+          <dt>Name</dt><dd>Arth Thakkar</dd>
+          <dt>Focus</dt><dd>Identity &amp; Access</dd>
+          <dt>Platform</dt><dd>Microsoft Entra ID</dd>
+          <dt>Location</dt><dd>Toronto, ON</dd>
+        </dl>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">Identity &amp; Access Management · IT Infrastructure</p>
+        <h1>Hi, I'm Arth.</h1>
+        <p class="lede">I help large organizations give people the right access at the right time, keep audits clean, and make IT feel effortless for the people who rely on it. Over 5 years, I've supported enterprise environments of up to 20,000+ users at Extreme Networks, McCain Foods, Walmart Global Tech and Deloitte.</p>
+        <p class="now"><i aria-hidden="true"></i><span>Currently <b>Senior Systems Specialist</b> at Extreme Networks</span></p>
+        <div class="actions">
+          <a class="btn primary" href="Arth_Thakkar_Resume.pdf" target="_blank" rel="noopener" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+            Download resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/arththakkar18" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z"/></svg>
+            LinkedIn</a>
+          <button class="btn copy-email" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span>Copy email</span></button>
+        </div>
+        <p class="contact">arththakkar186@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="stats" aria-label="Highlights">
+      <div><b>10,000+</b><small>users covered by monthly SOX ITGC access audits I co-own</small></div>
+      <div><b>5,000+</b><small>identities managed through the full joiner-mover-leaver lifecycle</small></div>
+      <div><b>40%</b><small>fewer provisioning errors after standardizing onboarding</small></div>
+      <div><b>100%</b><small>SLA compliance on 1,000+ incidents a month</small></div>
+    </div>
+
+    <div class="block">
+      <div class="head">
+        <p class="eyebrow">Selected work</p>
+        <h2>What I've delivered</h2>
+      </div>
+      <div class="cases">
+        <article class="case">
+          <span class="where">McCain Foods · Identity governance</span>
+          <h3>Just-in-time admin access</h3>
+          <p>Moved standing admin rights to eligible roles in Entra PIM, activated on demand with approval, MFA, justification and a time limit. Added access packages and recurring access reviews for privileged roles, groups and guests.</p>
+          <p class="result">Admin access granted only when needed, with an audit trail.</p>
+        </article>
+        <article class="case">
+          <span class="where">Walmart Global Tech · Identity lifecycle</span>
+          <h3>Standardized onboarding</h3>
+          <p>Rebuilt joiner-mover-leaver processes for 5,000+ identities and created account and group templates that new site launches adopted.</p>
+          <p class="result">40% fewer provisioning errors.</p>
+        </article>
+        <article class="case">
+          <span class="where">Audcomp MSP · Access design</span>
+          <h3>Cleaner roles across tenants</h3>
+          <p>Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including two municipal governments.</p>
+          <p class="result">35% fewer access-related incidents at 99.9% uptime.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="view" id="view-experience" data-name="experience" hidden>
+    <div class="head">
+      <p class="eyebrow">Career</p>
+      <h2>Experience</h2>
+      <p>Five years of enterprise IT, moving from support and infrastructure into identity and access management.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="job">
+        <div class="meta"><h3>Senior Systems Specialist</h3><span class="co">Extreme Networks</span><span class="when">Sep 2025 – Present · Toronto, ON</span><span class="current">Current role</span></div>
+        <div><ul>
+          <li>Senior onsite technical lead for the Canadian office, supporting senior leadership across end-user computing, site servers, networking and meeting rooms.</li>
+          <li>Co-own monthly SOX ITGC access audits for 10,000+ users and govern hybrid Active Directory and Entra ID with least privilege.</li>
+          <li>Lead AI and automation use cases with Claude, Claude Code, PowerShell and ServiceNow workflows, with human review of every output.</li>
+          <li>Serve as onsite network lead, installing switches, connecting edge to core across the fabric network and keeping wireless online.</li>
+        </ul><div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">ServiceNow</span><span class="tag">PowerShell</span></div></div>
+      </article>
+
+      <article class="job">
+        <div class="meta"><h3>Regional Technology Specialist</h3><span class="co">McCain Foods Limited</span><span class="when">Aug 2024 – Sep 2025 · Toronto, ON</span></div>
+        <div><ul>
+          <li>Administered Entra Privileged Identity Management, converting standing admin access to just-in-time activation with approval, MFA, justification and time limits.</li>
+          <li>Built Entra ID Governance access packages and recurring access reviews for privileged roles, groups and guest users.</li>
+          <li>Designed and enforced Intune compliance, configuration and app-protection policies for the corporate iOS fleet.</li>
+          <li>Primary technology representative for the Toronto head office, supporting C-suite and global executives.</li>
+        </ul><div class="tags"><span class="tag">Entra PIM</span><span class="tag">Access Reviews</span><span class="tag">Access Packages</span><span class="tag">Intune</span></div></div>
+      </article>
+
+      <article class="job">
+        <div class="meta"><h3>System Support Specialist II</h3><span class="co">Walmart Global Tech</span><span class="when">May 2023 – Aug 2024 · Toronto, ON</span></div>
+        <div><ul>
+          <li>Owned the identity lifecycle for 5,000+ identities in a 20,000+ user hybrid environment.</li>
+          <li>Reduced provisioning errors by 40% by standardizing joiner-mover-leaver processes and account templates.</li>
+          <li>Resolved 1,000+ incidents a month at 100% SLA compliance and improved global triage efficiency by 25%.</li>
+        </ul><div class="tags"><span class="tag">Identity Lifecycle</span><span class="tag">Active Directory</span><span class="tag">SCCM</span><span class="tag">JAMF Pro</span></div></div>
+      </article>
+
+      <article class="job">
+        <div class="meta"><h3>Information Technology Analyst</h3><span class="co">Deloitte</span><span class="when">Apr 2022 – May 2023 · Toronto, ON</span></div>
+        <div><ul>
+          <li>Ran joiner-mover-leaver processes for a 10,000-user practice, revoking access promptly at exit.</li>
+          <li>Automated Tier 2 and Tier 3 access resolution with PowerShell.</li>
+          <li>Supported partners and senior leaders, sustaining 95% customer satisfaction.</li>
+        </ul><div class="tags"><span class="tag">Microsoft 365</span><span class="tag">PowerShell</span><span class="tag">Teams Rooms</span></div></div>
+      </article>
+
+      <article class="job">
+        <div class="meta"><h3>Systems Administrator, Identity and Access Management</h3><span class="co">Audcomp (Managed Service Provider)</span><span class="when">Oct 2021 – Mar 2022 · Ancaster, ON</span></div>
+        <div><ul>
+          <li>Supported 10+ clients across government, enterprise, transportation and non-profit sectors, including the City of Hamilton and City of Burlington.</li>
+          <li>Redesigned roles and security groups across multi-tenant Microsoft 365 and Azure environments, reducing access-related incidents by 35%.</li>
+          <li>Deployed Microsoft Defender and EDR baselines to meet government audit requirements.</li>
+        </ul><div class="tags"><span class="tag">Azure</span><span class="tag">RBAC</span><span class="tag">Defender</span><span class="tag">Veeam</span></div></div>
+      </article>
+    </div>
+
+    <div class="block">
+      <div class="head"><p class="eyebrow">Capstone project</p><h2>Projects</h2></div>
+      <article class="job">
+        <div class="meta"><h3>MISE: AI-Powered Inventory Platform</h3><span class="co">UMGC Capstone · 6-person team</span><span class="when">May 2026 – Jul 2026</span></div>
+        <div>
+          <p class="sub" style="color:var(--muted)">A restaurant inventory platform that tracks ingredients, flags low stock and expiring items, and suggests menu specials with Claude on AWS Bedrock. The course instructor called it one of the most innovative projects in 10 years of teaching the class.</p>
+          <ul style="margin-top:14px">
+            <li>Designed the PostgreSQL data model with Prisma schema and migrations, plus the seed dataset.</li>
+            <li>Built the React inventory add, edit and delete flow and CSV export.</li>
+            <li>Wired dashboard API endpoints, with Vitest and Jest tests.</li>
+          </ul>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Docker</span><span class="tag">AWS Bedrock</span></div>
+          <div class="actions" style="margin-top:18px">
+            <a class="btn small" href="https://github.com/UMGCCAPSTONE/AI_Inventory_Backend" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              Backend code</a>
+            <a class="btn small" href="https://github.com/UMGCCAPSTONE/AI_Inventory_Frontend" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              Frontend code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="block">
+      <div class="head"><p class="eyebrow">Credentials</p><h2>Certifications</h2></div>
+      <div class="grid3">
+        <div class="tile"><span class="code">SC-300</span><h3>Identity and Access Administrator</h3><span class="status wip">Training complete · Exam pending</span></div>
+        <div class="tile"><span class="code">SC-900</span><h3>Security, Compliance, and Identity Fundamentals</h3><span class="status done">Certified 2023</span></div>
+        <div class="tile"><span class="code">AZ-900</span><h3>Azure Fundamentals</h3><span class="status done">Certified 2024</span></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="head"><p class="eyebrow">Education</p><h2>Education</h2></div>
+      <div class="grid2">
+        <div class="tile"><span class="code">Aug 2026</span><h3>Bachelor of Science, Computer Science</h3><p class="sub">University of Maryland Global Campus · GPA 3.88/4.00 · Dean's List, four terms · Completed while working full-time</p></div>
+        <div class="tile"><span class="code">Apr 2021</span><h3>Diploma, Computer Systems Technician – Network Systems</h3><p class="sub">Mohawk College, Hamilton, ON</p></div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div><h2>Want the full picture?</h2><p>My resume has every role, tool and result in detail.</p></div>
+      <a class="btn primary" href="Arth_Thakkar_Resume.pdf" target="_blank" rel="noopener" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+        Download resume (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="view-about" data-name="about" hidden>
+    <div class="about">
+      <div class="prose">
+        <p class="eyebrow">About me</p>
+        <h2>Making secure access simple.</h2>
+        <p>I'm Arth, an IT professional based in Toronto. I've spent the last five years as the onsite technical lead at large organizations, supporting executives, running site infrastructure and managing who can access what.</p>
+        <p>Identity and access management is where I do my best work. I use Microsoft Entra ID, Privileged Identity Management, access reviews and Conditional Access to give people what they need without leaving unnecessary admin rights in place, and I help keep SOX access audits clean. I've completed full SC-300 training and I'm preparing for the certification exam.</p>
+        <p>I also enjoy building. I use Claude and PowerShell to automate repetitive IT work, and I completed my computer science degree while working full-time.</p>
+      </div>
+      <aside class="principles" aria-label="How I work">
+        <p class="eyebrow">How I work</p>
+        <div class="principle"><h3>Access should be temporary</h3><p>Admin rights are requested, approved and time-limited, never permanent by default.</p></div>
+        <div class="principle"><h3>Security shouldn't slow people down</h3><p>The best controls protect the business without getting in anyone's way.</p></div>
+        <div class="principle"><h3>Automate what repeats</h3><p>If a task comes up twice, I script it and document it.</p></div>
+      </aside>
+    </div>
+
+    <div class="block">
+      <div class="head"><p class="eyebrow">Toolkit</p><h2>Skills</h2></div>
+      <div class="grid2">
+        <div class="tile skill"><h3>Identity &amp; governance</h3><div class="tags"><span class="tag">Microsoft Entra ID</span><span class="tag">PIM</span><span class="tag">Access Reviews</span><span class="tag">Entitlement Management</span><span class="tag">Conditional Access</span><span class="tag">MFA</span><span class="tag">SSO</span><span class="tag">Active Directory</span></div></div>
+        <div class="tile skill"><h3>Microsoft 365 &amp; endpoint</h3><div class="tags"><span class="tag">Intune</span><span class="tag">Exchange Online</span><span class="tag">SharePoint</span><span class="tag">SCCM</span><span class="tag">JAMF Pro</span><span class="tag">Defender</span></div></div>
+        <div class="tile skill"><h3>Infrastructure</h3><div class="tags"><span class="tag">Windows Server</span><span class="tag">Networking</span><span class="tag">Veeam</span><span class="tag">Barracuda</span><span class="tag">Teams Rooms</span></div></div>
+        <div class="tile skill"><h3>AI, automation &amp; ITSM</h3><div class="tags"><span class="tag">Claude</span><span class="tag">AWS Bedrock</span><span class="tag">PowerShell</span><span class="tag">ServiceNow</span><span class="tag">ITIL</span></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Arth Thakkar · Toronto, ON</span>
+    <nav aria-label="Footer">
+      <a href="https://www.linkedin.com/in/arththakkar18" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Arth_Thakkar_Resume.pdf" target="_blank" rel="noopener" download>Resume</a>
+      <a href="#" class="copy-email" role="button">arththakkar186@gmail.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var EMAIL = 'arththakkar186@gmail.com';
+  var views = document.querySelectorAll('.view');
+  var links = document.querySelectorAll('header nav a');
+  function show(name, scroll){
+    if(!document.getElementById('view-'+name)) name='home';
+    views.forEach(function(v){ v.hidden = v.dataset.name !== name; });
+    links.forEach(function(a){ a.dataset.view===name ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'); });
+    if(scroll) window.scrollTo(0,0);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]:not(.copy-email)');
+    if(!a) return;
+    e.preventDefault();
+    var name = a.getAttribute('href').slice(1) || 'home';
+    try{ history.replaceState(null,'','#'+name); }catch(_){}
+    show(name, true);
+  });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1), true); });
+  show(location.hash.slice(1) || 'home', false);
+
+  document.querySelectorAll('.copy-email').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      var label = el.querySelector('span') || el, original = label.textContent;
+      function flash(t){ label.textContent = t; setTimeout(function(){ label.textContent = original; }, 1800); }
+      function fallback(){
+        var target = document.querySelector('.contact');
+        var r = document.createRange(); r.selectNodeContents(target);
+        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        flash('Email selected');
+      }
+      try{ navigator.clipboard.writeText(EMAIL).then(function(){ flash('Copied'); }, fallback); }catch(_){ fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
