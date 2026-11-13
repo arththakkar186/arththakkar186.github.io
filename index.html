@@ -11,14 +11,20 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arththakkar186.github.io/">
 <meta property="og:title" content="Arth Thakkar · Identity, Access and IT Automation">
-<meta property="og:description" content="Microsoft Entra ID, identity governance, SOX ITGC audits and AI-assisted automation for organizations of up to 20,000+ users.">
+<meta property="og:description" content="Microsoft Entra ID, identity governance, SOX ITGC audits and AI-assisted automation for organizations of 10,000 to 20,000+ users.">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1726'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' fill='%23F1F3F6' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+<script>
+(function(){var r=document.documentElement;r.classList.add('js');try{var t=localStorage.getItem('at-theme');if(t==='dark'||t==='light')r.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Arth Thakkar","url":"https://arththakkar186.github.io/","jobTitle":"Senior Systems Specialist","worksFor":{"@type":"Organization","name":"Extreme Networks"},"address":{"@type":"PostalAddress","addressLocality":"Toronto","addressRegion":"ON","addressCountry":"CA"},"email":"mailto:arththakkar186@gmail.com","sameAs":["https://www.linkedin.com/in/arththakkar18"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Maryland Global Campus"},{"@type":"CollegeOrUniversity","name":"Mohawk College"}],"knowsAbout":["Microsoft Entra ID","Identity and access management","Privileged Identity Management","Identity governance","SOX ITGC audits","Microsoft Intune","Microsoft 365","Microsoft Graph","PowerShell","Claude Code","Model Context Protocol","ServiceNow"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400..700&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Martian+Mono:wdth,wght@75..112.5,400..600&amp;display=swap">
 <style>
-/* Layout: slim sticky header; an expanded-type name across the hero with the pitch on the left and a live PowerShell console on the right; then a brand line, an impact ledger, case files (wide, 2x2, wide), a dated timeline rail, a click-to-trace skills explorer, credentials, a short about, and a PowerShell-blue contact band. */
+/* Layout: slim sticky header with a theme toggle; an expanded-type name across the hero with the pitch on the left and a live PowerShell console on the right; then a brand line, a counting impact ledger, case files (wide, 2x2, wide), a "Now" board of work in progress, a dated timeline rail, a click-to-trace skills explorer, credentials, a short about, and a PowerShell-blue contact band. */
 :root{
   --paper:#F1F3F6;
   --surface:#FFFFFF;
@@ -32,6 +38,8 @@
   --accent-soft:#F8E4D8;
   --ok:#126B41;
   --ok-soft:#D9F0E4;
+  --info:#1C5BB8;
+  --info-soft:#DDE8F8;
   --console:#012456;
   --console-bar:#011A3F;
   --console-edge:#0A3570;
@@ -45,15 +53,18 @@
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"Martian Mono",ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
+  color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0A111C; --surface:#101A29; --ink:#E6ECF4; --ink-2:#9AA8BA; --line:#22314A; --grid:rgba(230,236,244,.045);
   --accent:#F2874A; --accent-text:#F2874A; --accent-ink:#0A111C; --accent-soft:#3A2414; --ok:#4FD08E; --ok-soft:#123222;
+  --info:#8DB8FF; --info-soft:#14284A;
   --console-edge:#1D4E94; --shadow:0 28px 56px -30px rgba(0,0,0,.75);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0A111C; --surface:#101A29; --ink:#E6ECF4; --ink-2:#9AA8BA; --line:#22314A; --grid:rgba(230,236,244,.045);
   --accent:#F2874A; --accent-text:#F2874A; --accent-ink:#0A111C; --accent-soft:#3A2414; --ok:#4FD08E; --ok-soft:#123222;
+  --info:#8DB8FF; --info-soft:#14284A;
   --console-edge:#1D4E94; --shadow:0 28px 56px -30px rgba(0,0,0,.75);
   color-scheme:dark}
 
@@ -81,6 +92,11 @@ p,h1,h2,h3,h4,figure{margin:0}
 .nav a{font:500 14px/1 var(--body);color:var(--ink-2);text-decoration:none;padding:9px 12px;border-radius:8px;white-space:nowrap;transition:color .15s,background .15s}
 .nav a:hover{color:var(--ink);background:var(--surface)}
 .nav a[aria-current]{color:var(--ink);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.theme-btn{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;padding:0;transition:border-color .15s}
+.theme-btn:hover{border-color:var(--ink)}
+.theme-btn svg{width:18px;height:18px}
+.theme-btn .i-sun,.theme-btn[data-mode="dark"] .i-moon{display:none}
+.theme-btn[data-mode="dark"] .i-sun{display:block}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:600 15px/1 var(--body);padding:13px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .15s ease,border-color .15s,background .15s,color .15s}
@@ -149,7 +165,7 @@ p,h1,h2,h3,h4,figure{margin:0}
 .ledger > div{padding:clamp(18px,2.4vw,28px);display:grid;gap:10px;align-content:start;min-width:0}
 .ledger > div + div{border-left:1px solid var(--line)}
 .ledger b{font:800 clamp(30px,3.8vw,48px)/1 var(--display);font-stretch:110%;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
-.ledger b span{color:var(--accent-text)}
+.ledger b .unit{color:var(--accent-text)}
 .ledger p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
 
 /* sections */
@@ -180,6 +196,29 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .pipe li:not(:last-child)::after{content:"";position:absolute;top:50%;right:-8px;width:6px;height:6px;border-top:1.5px solid var(--ink-2);border-right:1.5px solid var(--ink-2);transform:translateY(-50%) rotate(45deg)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font:500 11.5px/1 var(--mono);padding:7px 9px;border-radius:6px;border:1px solid var(--line);color:var(--ink-2);background:var(--paper)}
+
+/* now board */
+.now-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.now-card{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,2.6vw,30px);display:grid;gap:14px;align-content:start}
+.now-card > p:not(.status):not(.trail){color:var(--ink-2);text-wrap:pretty}
+.status{justify-self:start;display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.status i{position:relative;width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.status.build{color:var(--accent-text);background:var(--accent-soft)}
+.status.build i::after{content:"";position:absolute;inset:0;border-radius:50%;background:currentColor;animation:ping 1.8s cubic-bezier(0,0,.2,1) infinite}
+.status.next{color:var(--info);background:var(--info-soft)}
+.status.learn{color:var(--ok);background:var(--ok-soft)}
+.status.exam{color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+@keyframes ping{75%,100%{transform:scale(2.6);opacity:0}}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;counter-reset:step}
+.steps li{counter-increment:step;display:inline-flex;align-items:center;gap:8px;font:500 13px/1.2 var(--body);padding:8px 11px;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+.steps li::before{content:counter(step,decimal-leading-zero);font:500 11px/1 var(--mono);color:var(--accent-text)}
+.track{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.track li{display:grid;gap:7px;align-content:start;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--paper);min-width:0}
+.track b{font:700 16px/1.1 var(--display);font-stretch:110%}
+.track span{font:500 11px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.track li.done span{color:var(--ok)}
+.track li.doing{border-color:var(--accent)}
+.track li.doing span{color:var(--accent-text)}
 
 /* timeline */
 .timeline{list-style:none;margin:0;padding:0;position:relative}
@@ -276,12 +315,12 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .ledger{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ledger > div:nth-child(3){border-left:0}
   .ledger > div:nth-child(n+3){border-top:1px solid var(--line)}
-  .cases,.case.wide,.creds,.edu,.about,.band{grid-template-columns:minmax(0,1fr)}
+  .cases,.case.wide,.now-grid,.creds,.edu,.about,.band{grid-template-columns:minmax(0,1fr)}
   .band{align-items:start}
 }
 @media (max-width:760px){
   html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 116px)}
-  .site-head .wrap{flex-wrap:wrap;padding-block:10px 0}
+  .site-head .wrap{flex-wrap:wrap;column-gap:10px;padding-block:10px 0}
   .nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
   .nav a{padding:8px 9px;font-size:13.5px}
   .nav::-webkit-scrollbar{display:none}
@@ -299,10 +338,30 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .ledger{grid-template-columns:minmax(0,1fr)}
   .ledger > div + div{border-left:0;border-top:1px solid var(--line)}
 }
+@media (max-width:359px){
+  .brand-name{display:none}
+}
+
+/* scroll reveal: only when JavaScript is running, and never for reduced motion or print */
+.js .reveal{opacity:0;translate:0 18px;transition:opacity .6s ease,translate .6s cubic-bezier(.2,.7,.2,1)}
+.js .case.reveal{transition:opacity .6s ease,translate .6s cubic-bezier(.2,.7,.2,1),border-color .2s ease,transform .2s ease}
+.js .reveal.in{opacity:1;translate:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .name,.ln,.caret{animation:none}
-  .case,.btn,.chip,.toast{transition:none}
+  .name,.ln,.caret,.status.build i::after{animation:none}
+  .case,.btn,.chip,.toast,.theme-btn{transition:none}
+  .case:hover{transform:none}
+  .js .reveal,.js .case.reveal{opacity:1;translate:none;transition:none}
+}
+@media print{
+  /* :not(#print) lifts specificity above the dark-theme rules, so print is always light */
+  :root:not(#print){--paper:#FFFFFF;--surface:#FFFFFF;--ink:#0D1726;--ink-2:#4B5869;--line:#D3DAE3;--grid:transparent;--accent:#C24E14;--accent-text:#A9420F;--accent-soft:#F8E4D8;--ok:#126B41;--ok-soft:#D9F0E4;--info:#1C5BB8;--info-soft:#DDE8F8;color-scheme:light}
+  .site-head,.skip,.toast,.theme-btn,.caret,.linkbtn,.hero::before{display:none!important}
+  .js .reveal,.js .case.reveal{opacity:1!important;translate:none!important;transition:none!important}
+  .ln,.name{animation:none!important}
+  .section{padding-top:32px}
+  .case,.now-card,.cred,.role,.ledger,.band{break-inside:avoid}
+  .evidence{position:static}
   .case:hover{transform:none}
 }
 </style>
@@ -315,11 +374,16 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     <a class="brand" href="#top" aria-label="Arth Thakkar, back to top"><b class="mono-mark" aria-hidden="true">AT</b><span class="brand-name">Arth Thakkar</span></a>
     <nav class="nav" aria-label="Sections">
       <a href="#work">Work</a>
+      <a href="#now">Now</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch to dark theme" hidden>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+    </button>
     <a class="btn sm primary" href="Arth_Thakkar_Resume.pdf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
       Resume</a>
@@ -338,8 +402,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <h1 class="name" id="name">Arth Thakkar</h1>
       <div class="hero-grid">
         <div class="pitch">
-          <p class="lede">I design, secure and automate enterprise IT for organizations of up to <b>20,000+ users</b>, with deep hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune and <b>AI-assisted automation</b>.</p>
-          <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto. Five years across enterprise and MSP environments, from identity governance and SOX audits to site networks and servers.</p>
+          <p class="lede">I design, secure and automate enterprise IT for organizations of <b>10,000 to 20,000+ users</b>, with deep hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune and <b>AI-assisted automation</b>.</p>
+          <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto, where I co-own SOX access audits and build AI workflows with Claude. 5+ years across enterprise and MSP environments, from identity governance to site networks and servers.</p>
           <div class="actions">
             <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
@@ -366,9 +430,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               <div class="ln" style="--i:1"><dt>Name</dt><dd>Arth Thakkar</dd></div>
               <div class="ln" style="--i:2"><dt>Role</dt><dd>Senior Systems Specialist, Extreme Networks</dd></div>
               <div class="ln" style="--i:3"><dt>Focus</dt><dd>Entra ID, IAM, Microsoft 365, Intune, Automation</dd></div>
-              <div class="ln" style="--i:4"><dt>Experience</dt><dd>5+ years, environments up to 20,000+ users</dd></div>
+              <div class="ln" style="--i:4"><dt>Experience</dt><dd>5+ years, organizations of 10,000 to 20,000+ users</dd></div>
               <div class="ln" style="--i:5"><dt>Governance</dt><dd>PIM, access reviews, SOX ITGC audits</dd></div>
-              <div class="ln" style="--i:6"><dt>Building</dt><dd>AI-assisted SOX audit review, knowledge-base gap analysis</dd></div>
+              <div class="ln" style="--i:6"><dt>Building</dt><dd>Knowledge-base gap finder, SOX evidence pulled straight from ServiceNow</dd></div>
               <div class="ln" style="--i:7"><dt>Location</dt><dd>Toronto, ON (open to Calgary, Vancouver, Ottawa)</dd></div>
               <div class="ln" style="--i:8"><dt>Seeking</dt><dd>Information Systems Engineer roles</dd></div>
             </dl>
@@ -399,10 +463,10 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   <section class="impact" aria-label="Impact in numbers">
     <div class="wrap">
       <div class="ledger">
-        <div><b>10,000<span>+</span></b><p>users in the monthly SOX ITGC access audits I co-own, with zero missed audit cycles</p></div>
-        <div><b>5,000<span>+</span></b><p>identities managed through the full joiner-mover-leaver lifecycle</p></div>
-        <div><b>40<span>%</span></b><p>fewer provisioning errors after I standardized onboarding at Walmart Global Tech</p></div>
-        <div><b>100<span>%</span></b><p>SLA compliance on 1,000+ incidents a month in ServiceNow</p></div>
+        <div><b><span class="num" data-count="10000">10,000</span><span class="unit">+</span></b><p>users in the monthly SOX ITGC access audits I co-own, with zero missed audit cycles</p></div>
+        <div><b><span class="num" data-count="100">100</span><span class="unit">%</span></b><p>match between my Claude-assisted SOX evidence review and the manual review, in a side-by-side test</p></div>
+        <div><b><span class="num" data-count="40">40</span><span class="unit">%</span></b><p>fewer provisioning errors after I standardized onboarding at Walmart Global Tech</p></div>
+        <div><b><span class="num" data-count="35">35</span><span class="unit">%</span></b><p>fewer access-related incidents after I redesigned roles across 10+ client tenants</p></div>
       </div>
     </div>
   </section>
@@ -417,11 +481,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       </div>
 
       <div class="cases">
-        <article class="case wide">
+        <article class="case wide reveal">
           <div class="stack">
             <p class="tagline">Extreme Networks · Automation and AI</p>
             <h3>AI-assisted automation, kept in version control</h3>
-            <p>I build automations with Claude Code, PowerShell and ServiceNow workflows, from scheduled local jobs to API-connected cloud workflows, all versioned in GitHub. Changes run in approval mode, so a person reviews every AI output before it touches a live system. I also write IT knowledge documentation with Claude, and I'm building a workflow that compares ServiceNow knowledge articles against source documentation to flag gaps.</p>
+            <p>I build automations with Claude Code, PowerShell and ServiceNow workflows, from scheduled local jobs to API-connected cloud workflows, all versioned in GitHub. Everything runs in approval mode, so a person reviews every AI output before it touches a live system. I also write IT knowledge articles with Claude, following a standard documentation procedure.</p>
             <p class="result"><span>Result</span><b>Less manual rework, with every automation tracked in GitHub and reviewed before it runs.</b></p>
           </div>
           <ol class="pipe" aria-label="How an automation ships">
@@ -432,7 +496,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </ol>
         </article>
 
-        <article class="case">
+        <article class="case reveal">
           <p class="tagline">McCain Foods · Identity governance</p>
           <h3>Just-in-time admin access</h3>
           <p>Converted standing admin access for Entra ID and Azure roles to eligible, just-in-time activation with approval, MFA, justification and time limits. Added access packages and recurring access reviews for privileged roles, groups and guests.</p>
@@ -440,15 +504,15 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <p class="result"><span>Result</span><b>Admin rights exist only when someone needs them, with an audit trail.</b></p>
         </article>
 
-        <article class="case">
+        <article class="case reveal">
           <p class="tagline">Extreme Networks · SOX ITGC</p>
           <h3>Audit-ready access, every month</h3>
-          <p>Co-own the monthly SOX ITGC access audits for 10,000+ users, collecting access evidence and governing hybrid Active Directory and Entra ID with least privilege. I also piloted a Claude-assisted review of the ServiceNow audit evidence, and in a side-by-side test it matched my manual review exactly.</p>
-          <p class="trail">Monthly · 10,000+ users · AD + Entra ID</p>
-          <p class="result"><span>Result</span><b>Zero missed audit cycles, and an AI-assisted review that matched the manual check.</b></p>
+          <p>Co-own the monthly SOX ITGC access audits for 10,000+ users, collecting access evidence and governing hybrid Active Directory and Entra ID with least privilege. I piloted a Claude-assisted review of the evidence, using requested item (RITM) and incident exports from ServiceNow, and in a side-by-side test it matched my manual review 100%.</p>
+          <p class="trail">Monthly · 10,000+ users · AD + Entra ID · RITM + INC</p>
+          <p class="result"><span>Result</span><b>Zero missed audit cycles, and an AI-assisted review that matched the manual check 100%.</b></p>
         </article>
 
-        <article class="case">
+        <article class="case reveal">
           <p class="tagline">Walmart Global Tech · Identity lifecycle</p>
           <h3>Onboarding without the errors</h3>
           <p>Standardized joiner-mover-leaver processes for 5,000+ identities in a 20,000+ user hybrid environment, and built account and group templates that new site launches adopted.</p>
@@ -456,7 +520,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <p class="result"><span>Result</span><b>40% fewer provisioning errors.</b></p>
         </article>
 
-        <article class="case">
+        <article class="case reveal">
           <p class="tagline">Audcomp (MSP) · Access design</p>
           <h3>Cleaner roles across client tenants</h3>
           <p>Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including the City of Hamilton and City of Burlington.</p>
@@ -464,7 +528,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <p class="result"><span>Result</span><b>35% fewer access-related incidents at 99.9% uptime.</b></p>
         </article>
 
-        <article class="case wide">
+        <article class="case wide reveal">
           <div class="stack">
             <p class="tagline">UMGC capstone · AI Cloud Lead · 6-person team · 2026</p>
             <h3>MISE, an AI-powered inventory platform</h3>
@@ -489,6 +553,55 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     </div>
   </section>
 
+  <!-- NOW -->
+  <section class="section" id="now">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Now · Updated November 2026</p>
+        <h2>What I'm building next</h2>
+        <p>Work in progress at Extreme Networks, and what I'm studying alongside it. Every AI workflow runs in approval mode, so a person signs off before anything changes.</p>
+      </div>
+
+      <div class="now-grid">
+        <article class="now-card reveal">
+          <p class="status build"><i aria-hidden="true"></i>In build</p>
+          <h3>Knowledge-base gap finder</h3>
+          <p>Claude pulls our ServiceNow knowledge articles, compares them with the source documentation and flags anything missing or out of date, so the service desk answers from current information.</p>
+          <ol class="steps" aria-label="How the gap finder works">
+            <li>Pull articles</li>
+            <li>Compare with source</li>
+            <li>Flag gaps</li>
+            <li>Human review</li>
+          </ol>
+        </article>
+
+        <article class="now-card reveal">
+          <p class="status next"><i aria-hidden="true"></i>Next phase</p>
+          <h3>SOX evidence, straight from ServiceNow</h3>
+          <p>My Claude-assisted SOX review already matched the manual review 100%, working from exported requested items (RITMs) and incidents. The next phase pulls those records directly from ServiceNow, removing the manual export step.</p>
+          <p class="trail">Manual export → Direct pull · approval mode</p>
+        </article>
+
+        <article class="now-card reveal">
+          <p class="status learn"><i aria-hidden="true"></i>Learning</p>
+          <h3>AI orchestration, done safely</h3>
+          <p>Weekly architecture sessions with our IT automation lead on connecting AI agents to IT systems through MCP servers and REST APIs, and on Microsoft Graph app registrations, including when to use delegated access and when to use a certificate-based service principal.</p>
+          <div class="tags"><span class="tag">MCP</span><span class="tag">Microsoft Graph</span><span class="tag">Service principals</span><span class="tag">REST APIs</span></div>
+        </article>
+
+        <article class="now-card reveal">
+          <p class="status exam"><i aria-hidden="true"></i>Exam prep</p>
+          <h3>SC-300 certification</h3>
+          <p>Microsoft Identity and Access Administrator, the certification that matches my day-to-day work in Entra ID, PIM and identity governance.</p>
+          <ol class="track" aria-label="SC-300 progress">
+            <li class="done"><span>Complete</span><b>Training</b></li>
+            <li class="doing"><span>Preparing</span><b>Exam</b></li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section class="section" id="experience">
     <div class="wrap">
@@ -499,7 +612,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       </div>
 
       <ol class="timeline">
-        <li class="role current">
+        <li class="role current reveal">
           <div class="meta">
             <p class="when">Sep 2025 – Present</p>
             <p class="badge">Current role</p>
@@ -510,18 +623,19 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>Senior Systems Specialist (Infrastructure Site Lead)</h3>
             <ul>
               <li>Co-own monthly SOX ITGC access audits for 10,000+ users and govern hybrid AD and Entra ID with least privilege, with zero missed audit cycles.</li>
-              <li>Piloted a Claude-assisted review of SOX audit evidence from ServiceNow incident and request exports; in a side-by-side test it matched the manual review exactly.</li>
+              <li>Piloted a Claude-assisted review of SOX audit evidence from ServiceNow requested item (RITM) and incident exports; in a side-by-side test it matched the manual review 100%. Now extending it to pull records directly from ServiceNow.</li>
               <li>Engineer AI-assisted automation with Claude Code, PowerShell and GitHub, in version-controlled repositories for scheduled and API-connected jobs, with approval before any change goes live.</li>
-              <li>Write IT knowledge documentation with Claude, and now building a workflow that compares ServiceNow knowledge articles against source documentation to find gaps.</li>
-              <li>Partner with Oracle IT and HR to diagnose and remediate automation issues in business-critical workflows.</li>
+              <li>Write IT knowledge articles with Claude, and building a workflow in which Claude pulls ServiceNow knowledge articles, compares them with source documentation and flags gaps.</li>
+              <li>Partner with the IT automation lead in weekly architecture sessions on the AI orchestration roadmap: MCP integrations, Microsoft Graph app registrations and security review for new integrations.</li>
+              <li>Work with Oracle IT and HR to diagnose and remediate automation issues in business-critical workflows.</li>
               <li>Lead site infrastructure with no local NetOps staff, from switches and edge-to-core fabric links to wireless, Windows servers, backups and badge access.</li>
-              <li>Primary face of IT for the Canadian office, with white-glove support for senior leadership.</li>
+              <li>Primary face of IT for the Canadian office, with white-glove support for senior leadership, and run the Evergreen hardware refresh with 5 vendors.</li>
             </ul>
-            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">Claude Code</span><span class="tag">GitHub</span><span class="tag">PowerShell</span><span class="tag">ServiceNow</span><span class="tag">Knowledge base</span></div>
+            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">Microsoft Graph</span><span class="tag">GitHub</span><span class="tag">PowerShell</span><span class="tag">ServiceNow</span><span class="tag">Knowledge base</span></div>
           </div>
         </li>
 
-        <li class="role">
+        <li class="role reveal">
           <div class="meta">
             <p class="when">Aug 2024 – Sep 2025</p>
             <p class="co">McCain Foods Limited</p>
@@ -539,7 +653,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </div>
         </li>
 
-        <li class="role">
+        <li class="role reveal">
           <div class="meta">
             <p class="when">May 2023 – Aug 2024</p>
             <p class="co">Walmart Global Tech</p>
@@ -557,7 +671,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </div>
         </li>
 
-        <li class="role">
+        <li class="role reveal">
           <div class="meta">
             <p class="when">Apr 2022 – May 2023</p>
             <p class="co">Deloitte</p>
@@ -574,7 +688,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </div>
         </li>
 
-        <li class="role">
+        <li class="role reveal">
           <div class="meta">
             <p class="when">Oct 2021 – Mar 2022</p>
             <p class="co">Audcomp (Managed Service Provider)</p>
@@ -615,6 +729,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               <button class="chip" type="button" data-skill="ad" aria-pressed="false">Active Directory</button>
               <button class="chip" type="button" data-skill="jml" aria-pressed="false">Joiner-mover-leaver</button>
               <button class="chip" type="button" data-skill="sox" aria-pressed="false">SOX ITGC</button>
+              <button class="chip" type="button" data-skill="graph" aria-pressed="false">Microsoft Graph and app registrations</button>
             </div>
           </div>
           <div class="group">
@@ -631,7 +746,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>Automation and AI</h3>
             <div class="chips">
               <button class="chip" type="button" data-skill="ps" aria-pressed="false">PowerShell</button>
-              <button class="chip" type="button" data-skill="claude" aria-pressed="false">Claude Code and GitHub</button>
+              <button class="chip" type="button" data-skill="claude" aria-pressed="false">Claude Code, MCP and GitHub</button>
               <button class="chip" type="button" data-skill="bedrock" aria-pressed="false">AWS Bedrock</button>
               <button class="chip" type="button" data-skill="snow" aria-pressed="false">ServiceNow</button>
               <button class="chip" type="button" data-skill="kb" aria-pressed="false">Knowledge documentation</button>
@@ -661,11 +776,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 
       <div class="toolkit">
         <p>Full toolkit</p>
-        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect Sync, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2, Authenticator), SSPR, Entra ID Protection, SSO (SAML, OIDC, OAuth 2.0), app registrations and service principals (delegated and application permissions), Microsoft Graph, RBAC, B2B guest access, Zero Trust</p></div>
+        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect Sync, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2, Authenticator), SSPR, Entra ID Protection, SSO (SAML, OIDC, OAuth 2.0), app registrations and service principals (delegated and application permissions, certificate credentials), Microsoft Graph, RBAC, B2B guest access, Zero Trust</p></div>
         <div><h4>Identity governance</h4><p>Privileged Identity Management, access reviews, entitlement management and access packages, lifecycle workflows, joiner-mover-leaver, sign-in and audit logs, SOX ITGC audit evidence, segregation of duties</p></div>
         <div><h4>Endpoint and security</h4><p>Microsoft Intune, Jamf Pro, SCCM (Configuration Manager), Apple Business Manager, Windows 10/11, macOS, iOS, Microsoft Defender, EDR, Defender for Cloud Apps</p></div>
         <div><h4>Microsoft 365 and cloud</h4><p>Microsoft 365, Exchange Online, SharePoint, Teams, Teams Rooms, Zoom Rooms, licensing, Microsoft Azure, AWS Bedrock</p></div>
-        <div><h4>Automation and AI</h4><p>PowerShell, Claude Code, Anthropic Claude, LLM API integration, prompt engineering, human-in-the-loop validation, AI-assisted audit evidence review, ServiceNow workflows, Git, GitHub, Docker, React, Node.js, PostgreSQL</p></div>
+        <div><h4>Automation and AI</h4><p>PowerShell, Claude Code, Anthropic Claude, Model Context Protocol (MCP), LLM API integration, prompt engineering, human-in-the-loop validation, AI-assisted audit evidence review, ServiceNow workflows, REST APIs, Git, GitHub, Docker, React, Node.js, PostgreSQL</p></div>
         <div><h4>Infrastructure and ITSM</h4><p>Windows Server, backup and recovery (Veeam, Barracuda), switching and fabric networks, TCP/IP, DNS, DHCP, VPN, wireless and Ekahau surveys, ITIL, ServiceNow (Incident, Problem, Change, Knowledge, CMDB, HAM Pro), knowledge base management, vendor management</p></div>
       </div>
     </div>
@@ -680,9 +795,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <p>Identity-focused Microsoft certifications and a computer science degree finished while working full-time.</p>
       </div>
       <div class="creds">
-        <div class="cred"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam pending</p></div>
-        <div class="cred"><p class="code">AZ-900</p><h3>Microsoft Azure Fundamentals</h3><p class="pill ok">Certified 2024</p></div>
-        <div class="cred"><p class="code">SC-900</p><h3>Security, Compliance, and Identity Fundamentals</h3><p class="pill ok">Certified 2023</p></div>
+        <div class="cred reveal"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam pending</p></div>
+        <div class="cred reveal"><p class="code">AZ-900</p><h3>Microsoft Azure Fundamentals</h3><p class="pill ok">Certified 2024</p></div>
+        <div class="cred reveal"><p class="code">SC-900</p><h3>Security, Compliance, and Identity Fundamentals</h3><p class="pill ok">Certified 2023</p></div>
       </div>
       <div class="edu">
         <div class="cred"><p class="code">AUG 2026</p><h3>Bachelor of Science, Computer Science</h3><p>University of Maryland Global Campus · GPA 3.88/4.00 · Dean’s List, four terms · Completed while working full-time</p></div>
@@ -699,7 +814,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <h2>Making secure access simple</h2>
         <p>I'm Arth, an IT professional based in Toronto. For the past five years I've been the onsite technical lead at large organizations, supporting executives, running site infrastructure and managing who can access what.</p>
         <p>Identity and access management is where I do my best work. I use Microsoft Entra ID, Privileged Identity Management, access reviews and Conditional Access to give people what they need without leaving unnecessary admin rights in place, and I help keep SOX access audits clean. I've completed full SC-300 training and I'm preparing for the exam.</p>
-        <p>I also like to build. I automate repetitive IT work with Claude Code, PowerShell and GitHub, and I'm now using AI to speed up audit evidence review and keep IT documentation accurate. I finished my computer science degree with a 3.88 GPA while working full-time.</p>
+        <p>I also like to build. I automate repetitive IT work with Claude Code, PowerShell and GitHub, and I'm now using AI to speed up audit evidence review and keep IT documentation accurate. Every week I work through AI orchestration architecture with our IT automation lead, so what I build fits safely into the wider platform. I finished my computer science degree with a 3.88 GPA while working full-time.</p>
       </div>
       <ul class="principles" aria-label="How I work">
         <li><h3>Access should be temporary</h3><p>Admin rights are requested, approved and time-limited, never permanent by default.</p></li>
@@ -751,6 +866,87 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 <script>
 (function(){
   var EMAIL = 'arththakkar186@gmail.com';
+  var root = document.documentElement;
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  // Scroll reveal. Runs first; if anything fails, the hidden state is removed so no content stays invisible.
+  try {
+    var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    var showAll = function(){ revealEls.forEach(function(el){ el.classList.add('in'); }); };
+    if(reduceMotion || !('IntersectionObserver' in window)){
+      showAll();
+    } else {
+      var revealIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){ entry.target.classList.add('in'); revealIO.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
+      revealEls.forEach(function(el){ revealIO.observe(el); });
+      window.addEventListener('beforeprint', showAll);
+    }
+  } catch(_) {
+    root.classList.remove('js');
+  }
+
+  // Theme toggle: follows the system setting until the visitor picks one, then remembers it
+  var themeBtn = document.querySelector('[data-theme-toggle]');
+  var darkMQ = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function effectiveTheme(){
+    var t = root.getAttribute('data-theme');
+    if(t === 'dark' || t === 'light') return t;
+    return darkMQ && darkMQ.matches ? 'dark' : 'light';
+  }
+  function syncTheme(){
+    var mode = effectiveTheme();
+    if(themeBtn){
+      themeBtn.setAttribute('data-mode', mode);
+      themeBtn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      themeBtn.title = mode === 'dark' ? 'Light theme' : 'Dark theme';
+    }
+    if(root.hasAttribute('data-theme')){
+      var paper = getComputedStyle(root).getPropertyValue('--paper').trim();
+      Array.prototype.forEach.call(document.querySelectorAll('meta[name="theme-color"]'), function(m){ if(paper) m.setAttribute('content', paper); });
+    }
+  }
+  if(themeBtn){
+    themeBtn.hidden = false;
+    themeBtn.addEventListener('click', function(){
+      var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('at-theme', next); }catch(_){}
+      syncTheme();
+    });
+    if(darkMQ){
+      if(darkMQ.addEventListener) darkMQ.addEventListener('change', syncTheme);
+      else if(darkMQ.addListener) darkMQ.addListener(syncTheme);
+    }
+    syncTheme();
+  }
+
+  // Impact numbers count up once when they scroll into view (final values are already in the HTML)
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+  if(counters.length && !reduceMotion && 'IntersectionObserver' in window && window.requestAnimationFrame){
+    var countIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        countIO.unobserve(entry.target);
+        var el = entry.target, target = parseFloat(el.getAttribute('data-count')) || 0, start = null, dur = 1200;
+        el.textContent = fmt(0);
+        function step(ts){
+          if(start === null) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          el.textContent = fmt(target * (1 - Math.pow(1 - p, 3)));
+          if(p < 1) window.requestAnimationFrame(step); else el.textContent = fmt(target);
+        }
+        window.requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ countIO.observe(el); });
+    window.addEventListener('beforeprint', function(){
+      counters.forEach(function(el){ el.textContent = fmt(parseFloat(el.getAttribute('data-count')) || 0); });
+    });
+  }
 
   // Footer year
   var yearEl = document.querySelector('[data-year]');
@@ -840,17 +1036,18 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     mfa:     ['MFA', [['mcc','Required MFA, approval and justification for privileged role activation in Entra PIM.']]],
     ad:      ['Active Directory', [['ext','Govern hybrid Active Directory and Entra ID with least privilege.'],['wmt','Owned the identity lifecycle for 5,000+ identities in a 20,000+ user hybrid environment.']]],
     jml:     ['Joiner-mover-leaver', [['wmt','Standardized joiner-mover-leaver processes and account templates, cutting provisioning errors by 40%.'],['del','Ran joiner-mover-leaver for a 10,000-user practice, revoking access promptly at exit.']]],
-    sox:     ['SOX ITGC', [['ext','Co-own monthly SOX ITGC access audits for 10,000+ users with zero missed audit cycles, and piloted a Claude-assisted evidence review that matched the manual check exactly.']]],
+    sox:     ['SOX ITGC', [['ext','Co-own monthly SOX ITGC access audits for 10,000+ users with zero missed audit cycles, and piloted a Claude-assisted evidence review that matched the manual review 100% in a side-by-side test.']]],
+    graph:   ['Microsoft Graph and app registrations', [['ext','Work with our IT automation lead on app registrations for AI integrations: delegated permissions when a person drives the task, and certificate-based service principals for unattended ServiceNow jobs.']]],
     intune:  ['Microsoft Intune', [['mcc','Designed compliance, configuration and app-protection policies for the corporate iOS fleet, from Apple Business Manager enrollment to retirement.'],['ext',DEVICES]]],
     jamf:    ['Jamf Pro', [['ext',DEVICES],['wmt',ENDPOINTS]]],
     sccm:    ['SCCM', [['ext',DEVICES],['wmt',ENDPOINTS]]],
     m365:    ['Microsoft 365', [['aud','Architected Microsoft 365 and Azure configurations, licensing and identity for 10+ clients.'],['del','Supported partners and senior leaders on Microsoft 365 and Teams meeting rooms at 95% customer satisfaction.']]],
     defender:['Microsoft Defender and EDR', [['aud','Deployed Defender and EDR baselines to meet government audit requirements for public-sector clients.']]],
     ps:      ['PowerShell', [['ext','Drive AI, data and automation use cases with Claude, PowerShell and ServiceNow workflows.'],['del','Automated Tier 2 and Tier 3 access resolution.']]],
-    claude:  ['Claude Code and GitHub', [['ext','Build automations with Claude Code in version-controlled GitHub repositories, with human approval before changes run, and piloted a Claude-assisted SOX evidence review that matched the manual check.'],['mise','Built the platform in shared GitHub repositories with a 6-person team.']]],
+    claude:  ['Claude Code, MCP and GitHub', [['ext','Build automations with Claude Code and MCP servers in version-controlled GitHub repositories, with human approval before changes run. Piloted a Claude-assisted SOX evidence review that matched the manual review 100%.'],['mise','Built the platform in shared GitHub repositories with a 6-person team.']]],
     bedrock: ['AWS Bedrock', [['mise','Runs Claude menu recommendations on AWS Bedrock.']]],
-    snow:    ['ServiceNow', [['ext','Use ServiceNow workflows for automation, analyze incident and request exports for SOX audits, and keep HAM Pro and CMDB asset records reconciled.'],['wmt','Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits.']]],
-    kb:      ['Knowledge documentation', [['ext','Write IT knowledge documentation with Claude. Now building a workflow that compares ServiceNow knowledge articles with source documentation to flag gaps.'],['del','Rebuilt the knowledge base and escalation procedures, and trained staff on applications and security practices.']]],
+    snow:    ['ServiceNow', [['ext','Use ServiceNow workflows for automation, analyze RITM and incident exports for SOX audits, and keep HAM Pro and CMDB asset records reconciled.'],['wmt','Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits.']]],
+    kb:      ['Knowledge documentation', [['ext','Write IT knowledge articles with Claude. Now building a workflow that pulls ServiceNow knowledge articles, compares them with source documentation and flags gaps.'],['del','Rebuilt the knowledge base and escalation procedures, and trained staff on applications and security practices.']]],
     net:     ['Networking', [['ext','Onsite network lead with no local NetOps staff, from switch installs and edge-to-core fabric links to wireless access points.'],['mcc','Completed an Ekahau wireless site survey for a new access point installation.']]],
     server:  ['Windows Server', [['ext','Monitor, patch and maintain the site’s Windows servers.']]],
     backup:  ['Backup and recovery', [['ext','Monitor local backups and run data restorations to confirm recovery readiness.'],['aud','Designed backup and recovery with Barracuda, Veeam and Microsoft cloud backup, with quarterly audits and cloud-to-cloud restores.']]],
