@@ -3,9 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arth Thakkar</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Arth Thakkar is an information systems professional in Toronto specializing in Microsoft Entra ID identity and access management, Microsoft 365, Intune and AI-assisted automation.">
+<title>Arth Thakkar · Identity, Access and IT Automation</title>
+<meta name="description" content="Arth Thakkar is an information systems professional in Toronto specializing in Microsoft Entra ID identity and access management, Microsoft 365, Intune and AI-assisted IT automation.">
+<link rel="canonical" href="https://arththakkar186.github.io/">
+<meta name="theme-color" content="#F1F3F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A111C" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arththakkar186.github.io/">
+<meta property="og:title" content="Arth Thakkar · Identity, Access and IT Automation">
+<meta property="og:description" content="Microsoft Entra ID, identity governance, SOX ITGC audits and AI-assisted automation for organizations of up to 20,000+ users.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1726'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' fill='%23F1F3F6' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400..700&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap">
@@ -22,7 +30,7 @@
   --accent-text:#A9420F;
   --accent-ink:#FFFFFF;
   --accent-soft:#F8E4D8;
-  --ok:#157A4A;
+  --ok:#126B41;
   --ok-soft:#D9F0E4;
   --console:#012456;
   --console-bar:#011A3F;
@@ -64,7 +72,7 @@ p,h1,h2,h3,h4,figure{margin:0}
 .skip:focus{left:max(16px,env(safe-area-inset-left,0px));top:calc(env(safe-area-inset-top,0px) + 8px);z-index:40;background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:8px}
 
 /* header */
-.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid var(--line)}
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid var(--line)}
 .site-head .wrap{display:flex;align-items:center;gap:10px 20px;padding-block:12px}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
 .mono-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--ink);color:var(--paper);font:800 13px/1 var(--display);font-stretch:125%;letter-spacing:.02em;flex:none}
@@ -72,7 +80,7 @@ p,h1,h2,h3,h4,figure{margin:0}
 .nav{display:flex;gap:2px}
 .nav a{font:500 14px/1 var(--body);color:var(--ink-2);text-decoration:none;padding:9px 12px;border-radius:8px;white-space:nowrap;transition:color .15s,background .15s}
 .nav a:hover{color:var(--ink);background:var(--surface)}
-.nav a[aria-current="true"]{color:var(--ink);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.nav a[aria-current]{color:var(--ink);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:600 15px/1 var(--body);padding:13px 18px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .15s ease,border-color .15s,background .15s,color .15s}
@@ -100,7 +108,8 @@ p,h1,h2,h3,h4,figure{margin:0}
 .now b{color:var(--ink);font-weight:600}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font:500 13px/1.4 var(--mono);color:var(--ink-2)}
-.mail .addr{color:var(--ink);user-select:all;overflow-wrap:anywhere}
+.mail .addr{color:var(--ink);overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .15s}
+.mail .addr:hover{text-decoration-color:currentColor}
 @keyframes rise{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 /* console */
@@ -243,7 +252,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .band .btn:hover{border-color:var(--console-fg)}
 .band .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .band .mail{color:var(--console-dim)}
-.band .mail .addr{color:var(--console-fg)}
+.band .mail .addr{color:var(--console-fg);text-decoration-color:var(--console-edge)}
+.band .mail .addr:hover{text-decoration-color:currentColor}
 .band .linkbtn{color:var(--console-cmd)}
 
 /* footer + toast */
@@ -252,7 +262,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .site-foot nav{display:flex;flex-wrap:wrap;gap:6px 18px}
 .site-foot a,.site-foot button{color:var(--ink-2);text-decoration:none;font:inherit;background:none;border:0;padding:0;cursor:pointer}
 .site-foot a:hover,.site-foot button:hover{color:var(--ink)}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--paper);font:500 14px/1.35 var(--body);padding:11px 16px;border-radius:10px;box-shadow:var(--shadow);max-width:calc(100% - 32px);text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;transform:translate(-50%,10px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;background:var(--ink);color:var(--paper);font:500 14px/1.35 var(--body);padding:11px 16px;border-radius:10px;box-shadow:var(--shadow);max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
 @media (max-width:980px){
   .hero-grid{grid-template-columns:minmax(0,1fr)}
@@ -284,10 +295,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .console{font-size:11.5px}
   .console-body{padding:14px 14px 18px}
 }
+@media (max-width:440px){
+  .ledger{grid-template-columns:minmax(0,1fr)}
+  .ledger > div + div{border-left:0;border-top:1px solid var(--line)}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .name,.ln,.caret{animation:none}
-  .case,.btn,.chip{transition:none}
+  .case,.btn,.chip,.toast{transition:none}
   .case:hover{transform:none}
 }
 </style>
@@ -305,7 +320,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn sm primary" href="Arth_Thakkar_Resume.pdf" download data-resume>
+    <a class="btn sm primary" href="Arth_Thakkar_Resume.pdf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
       Resume</a>
   </div>
@@ -326,14 +341,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <p class="lede">I design, secure and automate enterprise IT for organizations of up to <b>20,000+ users</b>, with deep hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune and <b>AI-assisted automation</b>.</p>
           <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto. Five years across enterprise and MSP environments, from identity governance and SOX audits to site networks and servers.</p>
           <div class="actions">
-            <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download data-resume>
+            <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
               Download resume (PDF)</a>
             <a class="btn" href="https://www.linkedin.com/in/arththakkar18" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
               LinkedIn profile</a>
           </div>
-          <p class="mail" data-mail><span class="addr">arththakkar186@gmail.com</span><button class="linkbtn" type="button" data-copy-email>Copy email</button></p>
+          <p class="mail" data-mail><a class="addr" href="mailto:arththakkar186@gmail.com">arththakkar186@gmail.com</a><button class="linkbtn" type="button" data-copy-email>Copy email</button></p>
         </div>
 
         <figure class="console">
@@ -353,12 +368,13 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               <div class="ln" style="--i:3"><dt>Focus</dt><dd>Entra ID, IAM, Microsoft 365, Intune, Automation</dd></div>
               <div class="ln" style="--i:4"><dt>Experience</dt><dd>5+ years, environments up to 20,000+ users</dd></div>
               <div class="ln" style="--i:5"><dt>Governance</dt><dd>PIM, access reviews, SOX ITGC audits</dd></div>
-              <div class="ln" style="--i:6"><dt>Location</dt><dd>Toronto, ON (open to Calgary, Vancouver, Ottawa)</dd></div>
-              <div class="ln" style="--i:7"><dt>Seeking</dt><dd>Information Systems Engineer roles</dd></div>
+              <div class="ln" style="--i:6"><dt>Building</dt><dd>AI-assisted SOX audit review, knowledge-base gap analysis</dd></div>
+              <div class="ln" style="--i:7"><dt>Location</dt><dd>Toronto, ON (open to Calgary, Vancouver, Ottawa)</dd></div>
+              <div class="ln" style="--i:8"><dt>Seeking</dt><dd>Information Systems Engineer roles</dd></div>
             </dl>
-            <p class="ln" style="--i:8"><span class="pr">PS C:\Users\recruiter&gt;</span> <span class="cm">Request-Interview</span> <span class="pa">-Candidate</span> <span class="st">"Arth Thakkar"</span></p>
-            <p class="ln okline" style="--i:9">Access granted. Next step: arththakkar186@gmail.com</p>
-            <p class="ln" style="--i:10"><span class="pr">PS C:\Users\recruiter&gt;</span> <span class="caret" aria-hidden="true"></span></p>
+            <p class="ln" style="--i:9"><span class="pr">PS C:\Users\recruiter&gt;</span> <span class="cm">Request-Interview</span> <span class="pa">-Candidate</span> <span class="st">"Arth Thakkar"</span></p>
+            <p class="ln okline" style="--i:10">Access granted. Next step: arththakkar186@gmail.com</p>
+            <p class="ln" style="--i:11"><span class="pr">PS C:\Users\recruiter&gt;</span> <span class="caret" aria-hidden="true"></span></p>
           </div>
         </figure>
       </div>
@@ -405,8 +421,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <div class="stack">
             <p class="tagline">Extreme Networks · Automation and AI</p>
             <h3>AI-assisted automation, kept in version control</h3>
-            <p>I build automations with Claude Code and authenticated GitHub integration, from scheduled local jobs to API-connected cloud workflows. Every AI output gets human review before it runs. I also partner with Oracle IT and HR to diagnose and fix automation issues in business-critical workflows.</p>
-            <p class="result"><span>Result</span><b>Less manual rework, with every automation tracked in GitHub.</b></p>
+            <p>I build automations with Claude Code, PowerShell and ServiceNow workflows, from scheduled local jobs to API-connected cloud workflows, all versioned in GitHub. Changes run in approval mode, so a person reviews every AI output before it touches a live system. I also write IT knowledge documentation with Claude, and I'm building a workflow that compares ServiceNow knowledge articles against source documentation to flag gaps.</p>
+            <p class="result"><span>Result</span><b>Less manual rework, with every automation tracked in GitHub and reviewed before it runs.</b></p>
           </div>
           <ol class="pipe" aria-label="How an automation ships">
             <li><span>01</span><b>Draft</b><small>Claude Code</small></li>
@@ -427,9 +443,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <article class="case">
           <p class="tagline">Extreme Networks · SOX ITGC</p>
           <h3>Audit-ready access, every month</h3>
-          <p>Co-own the monthly SOX ITGC access audits for 10,000+ users, collecting access evidence and governing hybrid Active Directory and Entra ID with least privilege.</p>
+          <p>Co-own the monthly SOX ITGC access audits for 10,000+ users, collecting access evidence and governing hybrid Active Directory and Entra ID with least privilege. I also piloted a Claude-assisted review of the ServiceNow audit evidence, and in a side-by-side test it matched my manual review exactly.</p>
           <p class="trail">Monthly · 10,000+ users · AD + Entra ID</p>
-          <p class="result"><span>Result</span><b>Zero missed audit cycles.</b></p>
+          <p class="result"><span>Result</span><b>Zero missed audit cycles, and an AI-assisted review that matched the manual check.</b></p>
         </article>
 
         <article class="case">
@@ -493,13 +509,15 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <div class="detail">
             <h3>Senior Systems Specialist (Infrastructure Site Lead)</h3>
             <ul>
-              <li>Engineer AI-assisted automation with Claude Code and GitHub, in version-controlled repositories for scheduled and API-connected jobs.</li>
+              <li>Co-own monthly SOX ITGC access audits for 10,000+ users and govern hybrid AD and Entra ID with least privilege, with zero missed audit cycles.</li>
+              <li>Piloted a Claude-assisted review of SOX audit evidence from ServiceNow incident and request exports; in a side-by-side test it matched the manual review exactly.</li>
+              <li>Engineer AI-assisted automation with Claude Code, PowerShell and GitHub, in version-controlled repositories for scheduled and API-connected jobs, with approval before any change goes live.</li>
+              <li>Write IT knowledge documentation with Claude, and now building a workflow that compares ServiceNow knowledge articles against source documentation to find gaps.</li>
               <li>Partner with Oracle IT and HR to diagnose and remediate automation issues in business-critical workflows.</li>
-              <li>Co-own monthly SOX ITGC access audits for 10,000+ users and govern hybrid AD and Entra ID with least privilege.</li>
               <li>Lead site infrastructure with no local NetOps staff, from switches and edge-to-core fabric links to wireless, Windows servers, backups and badge access.</li>
               <li>Primary face of IT for the Canadian office, with white-glove support for senior leadership.</li>
             </ul>
-            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">Claude Code</span><span class="tag">GitHub</span><span class="tag">PowerShell</span><span class="tag">ServiceNow</span></div>
+            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">Claude Code</span><span class="tag">GitHub</span><span class="tag">PowerShell</span><span class="tag">ServiceNow</span><span class="tag">Knowledge base</span></div>
           </div>
         </li>
 
@@ -549,10 +567,10 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>Information Technology Analyst</h3>
             <ul>
               <li>Ran joiner-mover-leaver processes for a 10,000-user practice, revoking access promptly at exit.</li>
-              <li>Automated Tier 2 and Tier 3 access resolution with PowerShell.</li>
+              <li>Automated Tier 2 and Tier 3 access resolution with PowerShell, and rebuilt the knowledge base and escalation procedures.</li>
               <li>Supported partners and senior leaders at 95% customer satisfaction.</li>
             </ul>
-            <div class="tags"><span class="tag">Joiner-mover-leaver</span><span class="tag">PowerShell</span><span class="tag">Microsoft 365</span></div>
+            <div class="tags"><span class="tag">Joiner-mover-leaver</span><span class="tag">PowerShell</span><span class="tag">Microsoft 365</span><span class="tag">Knowledge base</span></div>
           </div>
         </li>
 
@@ -616,6 +634,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               <button class="chip" type="button" data-skill="claude" aria-pressed="false">Claude Code and GitHub</button>
               <button class="chip" type="button" data-skill="bedrock" aria-pressed="false">AWS Bedrock</button>
               <button class="chip" type="button" data-skill="snow" aria-pressed="false">ServiceNow</button>
+              <button class="chip" type="button" data-skill="kb" aria-pressed="false">Knowledge documentation</button>
             </div>
           </div>
           <div class="group">
@@ -642,12 +661,12 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 
       <div class="toolkit">
         <p>Full toolkit</p>
-        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect Sync, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2, Authenticator), SSPR, Entra ID Protection, SSO (SAML, OIDC, OAuth 2.0), app registrations, RBAC, B2B guest access, Zero Trust</p></div>
+        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect Sync, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2, Authenticator), SSPR, Entra ID Protection, SSO (SAML, OIDC, OAuth 2.0), app registrations and service principals (delegated and application permissions), Microsoft Graph, RBAC, B2B guest access, Zero Trust</p></div>
         <div><h4>Identity governance</h4><p>Privileged Identity Management, access reviews, entitlement management and access packages, lifecycle workflows, joiner-mover-leaver, sign-in and audit logs, SOX ITGC audit evidence, segregation of duties</p></div>
         <div><h4>Endpoint and security</h4><p>Microsoft Intune, Jamf Pro, SCCM (Configuration Manager), Apple Business Manager, Windows 10/11, macOS, iOS, Microsoft Defender, EDR, Defender for Cloud Apps</p></div>
         <div><h4>Microsoft 365 and cloud</h4><p>Microsoft 365, Exchange Online, SharePoint, Teams, Teams Rooms, Zoom Rooms, licensing, Microsoft Azure, AWS Bedrock</p></div>
-        <div><h4>Automation and AI</h4><p>PowerShell, Claude Code, Anthropic Claude, LLM API integration, prompt engineering, human-in-the-loop validation, ServiceNow workflows, Git, GitHub, Docker, React, Node.js, PostgreSQL</p></div>
-        <div><h4>Infrastructure and ITSM</h4><p>Windows Server, backup and recovery (Veeam, Barracuda), switching and fabric networks, TCP/IP, DNS, DHCP, VPN, wireless and Ekahau surveys, ITIL, ServiceNow (Incident, Problem, Change, CMDB, HAM Pro), vendor management</p></div>
+        <div><h4>Automation and AI</h4><p>PowerShell, Claude Code, Anthropic Claude, LLM API integration, prompt engineering, human-in-the-loop validation, AI-assisted audit evidence review, ServiceNow workflows, Git, GitHub, Docker, React, Node.js, PostgreSQL</p></div>
+        <div><h4>Infrastructure and ITSM</h4><p>Windows Server, backup and recovery (Veeam, Barracuda), switching and fabric networks, TCP/IP, DNS, DHCP, VPN, wireless and Ekahau surveys, ITIL, ServiceNow (Incident, Problem, Change, Knowledge, CMDB, HAM Pro), knowledge base management, vendor management</p></div>
       </div>
     </div>
   </section>
@@ -680,12 +699,13 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <h2>Making secure access simple</h2>
         <p>I'm Arth, an IT professional based in Toronto. For the past five years I've been the onsite technical lead at large organizations, supporting executives, running site infrastructure and managing who can access what.</p>
         <p>Identity and access management is where I do my best work. I use Microsoft Entra ID, Privileged Identity Management, access reviews and Conditional Access to give people what they need without leaving unnecessary admin rights in place, and I help keep SOX access audits clean. I've completed full SC-300 training and I'm preparing for the exam.</p>
-        <p>I also like to build. I automate repetitive IT work with Claude Code, PowerShell and GitHub, and I finished my computer science degree with a 3.88 GPA while working full-time.</p>
+        <p>I also like to build. I automate repetitive IT work with Claude Code, PowerShell and GitHub, and I'm now using AI to speed up audit evidence review and keep IT documentation accurate. I finished my computer science degree with a 3.88 GPA while working full-time.</p>
       </div>
       <ul class="principles" aria-label="How I work">
         <li><h3>Access should be temporary</h3><p>Admin rights are requested, approved and time-limited, never permanent by default.</p></li>
         <li><h3>Security shouldn't slow people down</h3><p>The best controls protect the business without getting in anyone's way.</p></li>
         <li><h3>Automate what repeats</h3><p>If a task comes up twice, I script it and document it.</p></li>
+        <li><h3>AI does the legwork, people approve</h3><p>Every AI-assisted change is reviewed before it runs, and results are checked against a manual baseline.</p></li>
       </ul>
     </div>
   </section>
@@ -701,14 +721,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         </div>
         <div class="side">
           <div class="actions">
-            <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download data-resume>
+            <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
               Download resume</a>
             <a class="btn" href="https://www.linkedin.com/in/arththakkar18" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
               LinkedIn</a>
           </div>
-          <p class="mail" data-mail><span class="addr">arththakkar186@gmail.com</span><button class="linkbtn" type="button" data-copy-email>Copy email</button></p>
+          <p class="mail" data-mail><a class="addr" href="mailto:arththakkar186@gmail.com">arththakkar186@gmail.com</a><button class="linkbtn" type="button" data-copy-email>Copy email</button></p>
         </div>
       </div>
     </div>
@@ -717,85 +737,90 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 
 <footer class="site-foot">
   <div class="wrap">
-    <span>© 2026 Arth Thakkar · Toronto, ON</span>
+    <span>© <span data-year>2026</span> Arth Thakkar · Toronto, ON</span>
     <nav aria-label="Footer">
       <a href="https://www.linkedin.com/in/arththakkar18" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="Arth_Thakkar_Resume.pdf" download data-resume>Resume (PDF)</a>
+      <a href="Arth_Thakkar_Resume.pdf" download>Resume (PDF)</a>
       <button type="button" data-copy-email>Copy email</button>
     </nav>
   </div>
 </footer>
 
-<p class="toast" role="status" aria-live="polite" hidden></p>
+<p class="toast" role="status" aria-live="polite" aria-atomic="true"></p>
 
 <script>
 (function(){
   var EMAIL = 'arththakkar186@gmail.com';
-  var RESUME = 'Arth_Thakkar_Resume.pdf';
 
-  // Toast
-  var toastEl = document.querySelector('.toast'), toastTimer;
+  // Footer year
+  var yearEl = document.querySelector('[data-year]');
+  if(yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Toast: the element always stays in the page so screen readers announce each message
+  var toastEl = document.querySelector('.toast'), toastTimer, clearTimer;
   function toast(msg){
     if(!toastEl) return;
-    toastEl.textContent = msg; toastEl.hidden = false;
-    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.hidden = true; }, 2800);
+    clearTimeout(toastTimer); clearTimeout(clearTimer);
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('show');
+      clearTimer = setTimeout(function(){ toastEl.textContent = ''; }, 300);
+    }, 2800);
   }
 
-  // Copy email, falling back to selecting the address
-  document.querySelectorAll('[data-copy-email]').forEach(function(btn){
+  // Copy email, falling back to selecting the nearest address
+  function selectAddress(btn){
+    var scope = btn.closest('[data-mail]');
+    var all = document.querySelectorAll('.addr');
+    var addr = (scope && scope.querySelector('.addr')) || all[all.length - 1];
+    if(!addr) return;
+    try{
+      var r = document.createRange(); r.selectNodeContents(addr);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }catch(_){}
+    toast('Email selected. Press Ctrl+C or Cmd+C to copy it.');
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy-email]'), function(btn){
     btn.addEventListener('click', function(){
-      function selectAddr(){
-        var scope = btn.closest('[data-mail]');
-        var addr = (scope && scope.querySelector('.addr')) || document.querySelector('.addr');
-        try{ var r = document.createRange(); r.selectNodeContents(addr); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(_){}
-        toast('Email selected. Press Ctrl+C or Cmd+C to copy it.');
+      if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(EMAIL).then(
+          function(){ toast('Copied ' + EMAIL); },
+          function(){ selectAddress(btn); }
+        );
+      } else {
+        selectAddress(btn);
       }
-      try{ navigator.clipboard.writeText(EMAIL).then(function(){ toast('Copied ' + EMAIL); }, selectAddr); }
-      catch(_){ selectAddr(); }
     });
   });
 
-  // Resume: inside a Claude viewer use its save prompt; anywhere else the plain link downloads the PDF
-  var downloads = null, framed = false;
-  try{ framed = window.self !== window.top; }catch(_){ framed = true; }
-  try{
-    if(window.claude && typeof window.claude.use === 'function'){
-      window.claude.use('downloads').then(function(ns){ downloads = ns; }, function(){});
+  // Highlight the nav link for the section in view (clears above Work and on About)
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var ticking = false;
+  function markNav(){
+    ticking = false;
+    var line = window.innerHeight * 0.4;
+    var atBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2;
+    var currentId = '';
+    if(atBottom && sections.length){
+      currentId = sections[sections.length - 1].id;
+    } else {
+      sections.forEach(function(sec){ if(sec.getBoundingClientRect().top <= line) currentId = sec.id; });
     }
-  }catch(_){}
-  document.querySelectorAll('[data-resume]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      if(!downloads){
-        if(framed && window.claude){ e.preventDefault(); toast('Downloads are not available in this view. Email me and I will send my resume.'); }
-        return;
-      }
-      e.preventDefault();
-      fetch(RESUME).then(function(r){ if(!r.ok) throw { code: 'fetch' }; return r.blob(); })
-        .then(function(blob){ return downloads.save({ filename: RESUME, data: blob }); })
-        .then(function(res){ if(res && res.status === 'saved') toast('Resume saved'); })
-        .catch(function(err){
-          var code = err && err.code;
-          if(code === 'declined') return;
-          if(code === 'rate_limited'){ toast('A save prompt is already open.'); return; }
-          toast('The resume could not be saved here. Email me and I will send it.');
-        });
+    navLinks.forEach(function(a){
+      if(currentId && a.getAttribute('href') === '#' + currentId) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
     });
-  });
-
-  // Highlight the section in view
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
-  var byId = {};
-  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(!en.isIntersecting) return;
-        links.forEach(function(a){ a.removeAttribute('aria-current'); });
-        var a = byId[en.target.id]; if(a) a.setAttribute('aria-current', 'true');
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    Object.keys(byId).forEach(function(id){ var el = document.getElementById(id); if(el) io.observe(el); });
   }
+  function requestMark(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(markNav);
+  }
+  window.addEventListener('scroll', requestMark, { passive: true });
+  window.addEventListener('resize', requestMark);
+  markNav();
 
   // Skills explorer
   var ROLES = {
@@ -815,16 +840,17 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     mfa:     ['MFA', [['mcc','Required MFA, approval and justification for privileged role activation in Entra PIM.']]],
     ad:      ['Active Directory', [['ext','Govern hybrid Active Directory and Entra ID with least privilege.'],['wmt','Owned the identity lifecycle for 5,000+ identities in a 20,000+ user hybrid environment.']]],
     jml:     ['Joiner-mover-leaver', [['wmt','Standardized joiner-mover-leaver processes and account templates, cutting provisioning errors by 40%.'],['del','Ran joiner-mover-leaver for a 10,000-user practice, revoking access promptly at exit.']]],
-    sox:     ['SOX ITGC', [['ext','Co-own monthly SOX ITGC access audits for 10,000+ users with zero missed audit cycles.']]],
+    sox:     ['SOX ITGC', [['ext','Co-own monthly SOX ITGC access audits for 10,000+ users with zero missed audit cycles, and piloted a Claude-assisted evidence review that matched the manual check exactly.']]],
     intune:  ['Microsoft Intune', [['mcc','Designed compliance, configuration and app-protection policies for the corporate iOS fleet, from Apple Business Manager enrollment to retirement.'],['ext',DEVICES]]],
     jamf:    ['Jamf Pro', [['ext',DEVICES],['wmt',ENDPOINTS]]],
     sccm:    ['SCCM', [['ext',DEVICES],['wmt',ENDPOINTS]]],
     m365:    ['Microsoft 365', [['aud','Architected Microsoft 365 and Azure configurations, licensing and identity for 10+ clients.'],['del','Supported partners and senior leaders on Microsoft 365 and Teams meeting rooms at 95% customer satisfaction.']]],
     defender:['Microsoft Defender and EDR', [['aud','Deployed Defender and EDR baselines to meet government audit requirements for public-sector clients.']]],
     ps:      ['PowerShell', [['ext','Drive AI, data and automation use cases with Claude, PowerShell and ServiceNow workflows.'],['del','Automated Tier 2 and Tier 3 access resolution.']]],
-    claude:  ['Claude Code and GitHub', [['ext','Build automations with Claude Code and authenticated GitHub integration in version-controlled repositories, with human review of AI output.'],['mise','Built the platform in shared GitHub repositories with a 6-person team.']]],
+    claude:  ['Claude Code and GitHub', [['ext','Build automations with Claude Code in version-controlled GitHub repositories, with human approval before changes run, and piloted a Claude-assisted SOX evidence review that matched the manual check.'],['mise','Built the platform in shared GitHub repositories with a 6-person team.']]],
     bedrock: ['AWS Bedrock', [['mise','Runs Claude menu recommendations on AWS Bedrock.']]],
-    snow:    ['ServiceNow', [['ext','Use ServiceNow workflows for automation and keep HAM Pro and CMDB asset records reconciled.'],['wmt','Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits.']]],
+    snow:    ['ServiceNow', [['ext','Use ServiceNow workflows for automation, analyze incident and request exports for SOX audits, and keep HAM Pro and CMDB asset records reconciled.'],['wmt','Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits.']]],
+    kb:      ['Knowledge documentation', [['ext','Write IT knowledge documentation with Claude. Now building a workflow that compares ServiceNow knowledge articles with source documentation to flag gaps.'],['del','Rebuilt the knowledge base and escalation procedures, and trained staff on applications and security practices.']]],
     net:     ['Networking', [['ext','Onsite network lead with no local NetOps staff, from switch installs and edge-to-core fabric links to wireless access points.'],['mcc','Completed an Ekahau wireless site survey for a new access point installation.']]],
     server:  ['Windows Server', [['ext','Monitor, patch and maintain the site’s Windows servers.']]],
     backup:  ['Backup and recovery', [['ext','Monitor local backups and run data restorations to confirm recovery readiness.'],['aud','Designed backup and recovery with Barracuda, Veeam and Microsoft cloud backup, with quarterly audits and cloud-to-cloud restores.']]],
@@ -835,11 +861,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   var evList = document.getElementById('ev-list');
   var panel = document.getElementById('evidence');
   function render(id){
-    var s = SKILLS[id]; if(!s) return;
+    var s = SKILLS[id]; if(!s || !evSkill || !evList) return;
     evSkill.textContent = s[0];
     evList.textContent = '';
     s[1].forEach(function(item){
-      var who = ROLES[item[0]];
+      var who = ROLES[item[0]]; if(!who) return;
       var li = document.createElement('li');
       var head = document.createElement('p'); head.className = 'who';
       var b = document.createElement('b'); b.textContent = who[0];
@@ -852,7 +878,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
-      render(chip.dataset.skill);
+      render(chip.getAttribute('data-skill'));
+      if(!panel) return;
       var r = panel.getBoundingClientRect();
       if(r.top > window.innerHeight - 80 || r.bottom < 80){
         var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
