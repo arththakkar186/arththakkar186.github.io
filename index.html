@@ -24,10 +24,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Martian+Mono:wdth,wght@75..112.5,400..600&amp;display=swap">
 <style>
-/* Layout: sticky header with scrollspy and a theme toggle, an expanded-type name across the hero, the pitch on the left and a live
-   PowerShell window on the right. Then employers, an impact ledger, case files colour-tagged by career track (with data visuals
-   for the ServiceNow knowledge work), a career heat map, a "Now" board, a career path map, a dated timeline, a click-to-trace
-   skills explorer, credentials, an about block and a PowerShell-blue contact band. */
+/* Layout: sticky header with scrollspy and a theme toggle, an expanded-type name across the hero, the pitch on the left
+   (with an experience and education at-a-glance field) and a live PowerShell window on the right. Then employers, an impact
+   ledger, case files colour-tagged by career track, a career heat map, a "Now" board, a career path map, a dated timeline,
+   education and certifications, a click-to-trace skills explorer, an about block and a PowerShell-blue contact band. */
 :root{
   --paper:#F1F3F6;
   --surface:#FFFFFF;
@@ -159,9 +159,19 @@ p,h1,h2,h3,h4,figure{margin:0}
 @keyframes rise{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 .name{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 
-/* live PowerShell window, with a soft screen glow behind it */
+/* experience and education at a glance */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;max-width:36em;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fact{display:grid;gap:6px;align-content:start;padding:14px 16px;min-width:0}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact dt{font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text)}
+.fact dd{margin:0;display:grid;gap:6px;align-content:start}
+.fact b{font:700 20px/1.1 var(--display);font-stretch:110%;letter-spacing:-.01em;color:var(--ink)}
+.fact span{font-size:14px;line-height:1.45;color:var(--ink-2);text-wrap:pretty}
+.fact a{justify-self:start;font:600 13px/1.2 var(--body);color:var(--accent-text);text-underline-offset:3px}
+
+/* live PowerShell window, with a soft screen glow behind it (kept inside the column so it never causes sideways scrolling) */
 .console-wrap{position:relative;min-width:0}
-.console-wrap::before{content:"";position:absolute;inset:-7% -6% 10%;z-index:-1;pointer-events:none;border-radius:48px;background:radial-gradient(60% 55% at 50% 45%,var(--glow),transparent 72%);filter:blur(26px)}
+.console-wrap::before{content:"";position:absolute;inset:-6% 0 8%;z-index:-1;pointer-events:none;border-radius:48px;background:radial-gradient(60% 55% at 50% 45%,var(--glow),transparent 72%);filter:blur(26px)}
 .console{min-width:0;border-radius:12px;overflow:hidden;background:var(--console);color:var(--console-fg);box-shadow:var(--shadow),0 0 0 1px var(--console-edge);font:400 12.5px/1.75 var(--mono);font-stretch:87.5%}
 .console-bar{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;background:var(--console-bar);font:500 12px/1 var(--body);color:var(--console-dim)}
 .console-bar .glyph{font:600 11px/1 var(--mono);color:var(--console-fg);border:1px solid var(--console-edge);border-radius:4px;padding:3px 5px}
@@ -259,12 +269,12 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .viz-row b{font:700 17px/1 var(--display);font-stretch:110%;font-variant-numeric:tabular-nums;color:var(--ink);text-align:right}
 .viz-row b.neg{color:var(--accent-text)}
 .fbar{position:relative;height:12px;border-radius:4px;background:var(--line);overflow:hidden}
-.fbar i{position:absolute;top:0;bottom:0;left:var(--x,0);width:var(--w,0);min-width:3px;border-radius:4px;background:var(--trk,var(--accent))}
+.fbar i{position:absolute;top:0;bottom:0;left:0;min-width:3px;border-radius:4px;background:var(--trk,var(--accent))}
 .fbar i.cut{background:repeating-linear-gradient(135deg,var(--accent) 0 3px,transparent 3px 6px);box-shadow:inset 0 0 0 1.5px var(--accent)}
 .fbar i.ghost{background:transparent;border:1.5px dashed var(--accent)}
 .viz hr{width:100%;margin:2px 0;border:0;border-top:1px dashed var(--line)}
 .sbar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--line)}
-.sbar i{width:var(--w);background:var(--trk,var(--accent))}
+.sbar i{background:var(--trk,var(--accent))}
 .viz-key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--ink-2)}
 .viz-key span{display:inline-flex;align-items:center;gap:7px}
 .viz-key i{width:12px;height:12px;border-radius:3px;background:var(--line);flex:none}
@@ -396,6 +406,19 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .detail ul{margin:0;padding-left:18px;display:grid;gap:7px;list-style:disc}
 .detail li::marker{color:var(--accent)}
 
+/* education and certifications */
+.edu{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.edu + .creds{margin-top:16px}
+.cred{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:10px;align-content:start;min-width:0}
+.code{font:600 22px/1 var(--mono);letter-spacing:-.01em}
+.cred h3{font-size:18px}
+.cred p:not(.code):not(.pill){color:var(--ink-2);font-size:15px}
+.pill{justify-self:start;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 10px}
+.pill.ok{color:var(--ok);background:var(--ok-soft)}
+.pill.wip{color:var(--accent-text);box-shadow:inset 0 0 0 1px var(--accent)}
+.edu .code{font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+
 /* skills explorer */
 .explorer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(18px,3vw,36px);align-items:start}
 .groups{display:grid;gap:22px;min-width:0}
@@ -417,18 +440,6 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .toolkit > p{grid-column:1 / -1;font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text)}
 .toolkit h4{font:600 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .toolkit div p{font-size:14.5px;line-height:1.6}
-
-/* credentials */
-.creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.cred{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:10px;align-content:start;min-width:0}
-.code{font:600 22px/1 var(--mono);letter-spacing:-.01em}
-.cred h3{font-size:18px}
-.cred p:not(.code):not(.pill){color:var(--ink-2);font-size:15px}
-.pill{justify-self:start;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 10px}
-.pill.ok{color:var(--ok);background:var(--ok-soft)}
-.pill.wip{color:var(--accent-text);box-shadow:inset 0 0 0 1px var(--accent)}
-.edu{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;margin-top:16px}
-.edu .code{font-size:13px;color:var(--ink-2);letter-spacing:.04em}
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(26px,5vw,72px);align-items:start}
@@ -480,6 +491,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .readout{min-height:0}
 }
 @media (max-width:940px){
+  html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 116px)}
+  .site-head .wrap{flex-wrap:wrap;column-gap:10px;padding-block:10px 0}
+  .nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+  .nav a{padding:8px 9px;font-size:13.5px}
+  .nav::-webkit-scrollbar{display:none}
   .scroll-hint{display:block}
   .pathscroll{padding-bottom:6px}
 }
@@ -489,13 +505,6 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .ledger > div:nth-child(n+3){border-top:1px solid var(--line)}
   .cases,.case.wide,.now-grid,.creds,.edu,.about,.band{grid-template-columns:minmax(0,1fr)}
   .band{align-items:start}
-}
-@media (max-width:940px){
-  html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 116px)}
-  .site-head .wrap{flex-wrap:wrap;column-gap:10px;padding-block:10px 0}
-  .nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
-  .nav a{padding:8px 9px;font-size:13.5px}
-  .nav::-webkit-scrollbar{display:none}
 }
 @media (max-width:760px){
   .role{grid-template-columns:minmax(0,1fr);padding-left:38px}
@@ -516,6 +525,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .step span{justify-self:start}
   .viz-row{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
   .viz-row .fbar{grid-column:1 / -1;grid-row:2}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .fact + .fact{border-left:0;border-top:1px solid var(--line)}
 }
 @media (max-width:440px){
   .ledger{grid-template-columns:minmax(0,1fr)}
@@ -535,7 +546,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .site-head,.skip,.toast,.theme-btn,.caret,.linkbtn,.probe,.console-hint,.hero::before,.console-wrap::before{display:none!important}
   .name{animation:none!important}
   .section{padding-top:32px}
-  .case,.now-card,.cred,.role,.ledger,.band,.pathmap,.map-card{break-inside:avoid}
+  .case,.now-card,.cred,.role,.ledger,.band,.pathmap,.map-card,.facts{break-inside:avoid}
   .evidence{position:static}
   .case:hover{transform:none}
   .console-body{height:auto;overflow:visible}
@@ -545,9 +556,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 <body>
 <a class="skip" href="#work">Skip to selected work</a>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <marker id="arr-trip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker>
+    <marker id="arr-trip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z"/></marker>
   </defs>
 </svg>
 
@@ -560,6 +571,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <a href="#now">Now</a>
       <a href="#path">Path</a>
       <a href="#experience">Experience</a>
+      <a href="#credentials">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -586,6 +598,16 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="hero-grid">
         <div class="pitch">
           <p class="lede">I run, secure and automate enterprise IT for organizations of <b>10,000 to 20,000+ users</b>, with hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune, site networks, <b>ServiceNow</b> and <b>PowerShell</b>.</p>
+          <dl class="facts">
+            <div class="fact">
+              <dt>Experience</dt>
+              <dd><b>5+ years</b><span>Extreme Networks, McCain Foods, Walmart Global Tech, Deloitte and Audcomp, including 3 years as the on-site technical lead at global companies.</span><a href="#experience">See my experience</a></dd>
+            </div>
+            <div class="fact">
+              <dt>Education</dt>
+              <dd><b>BSc Computer Science</b><span>University of Maryland Global Campus, 2026, GPA 3.88, completed while working full-time. Diploma from Mohawk College, 2021.</span><a href="#credentials">See my education</a></dd>
+            </div>
+          </dl>
           <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto, where I run the site's infrastructure, co-own SOX access audits and get ServiceNow data ready for AI, checking every number against the source. I've automated with PowerShell since 2022, and every role since has been a step up. Next stop: an <b>Information Systems Engineer</b> role in Toronto, Vancouver, Calgary or Ottawa.</p>
           <div class="actions">
             <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download>
@@ -676,9 +698,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <div class="stack">
             <figure class="viz">
               <figcaption class="viz-cap">From export to AI-ready</figcaption>
-              <div class="viz-row"><span>Exported, read-only</span><span class="fbar" aria-hidden="true"><i style="--w:100%"></i></span><b>478</b></div>
-              <div class="viz-row"><span>Expired or superseded</span><span class="fbar" aria-hidden="true"><i class="cut" style="--x:92.7%;--w:7.3%"></i></span><b class="neg">&minus;35</b></div>
-              <div class="viz-row"><span>Current articles</span><span class="fbar" aria-hidden="true"><i style="--w:92.7%"></i></span><b>443</b></div>
+              <div class="viz-row"><span>Exported, read-only</span><span class="fbar" aria-hidden="true"><i style="width:100%"></i></span><b>478</b></div>
+              <div class="viz-row"><span>Expired or superseded</span><span class="fbar" aria-hidden="true"><i class="cut" style="left:92.7%;width:7.3%"></i></span><b class="neg">&minus;35</b></div>
+              <div class="viz-row"><span>Current articles</span><span class="fbar" aria-hidden="true"><i style="width:92.7%"></i></span><b>443</b></div>
             </figure>
             <div class="sample">
               <div class="sample-head"><b>What the AI tool never sees</b><button class="linkbtn" type="button" data-redact hidden>Show original</button></div>
@@ -701,8 +723,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <h3>Six links that didn't add up</h3>
           <p>The ServiceNow Aggregate API counted 834 ticket-to-article links, but the Table API returned 828. Before reporting any number, I ruled out duplicates, filters and deletions, and traced the gap to row-level access controls.</p>
           <figure class="viz">
-            <div class="viz-row"><span>Aggregate API</span><span class="fbar" aria-hidden="true"><i style="--w:85%"></i></span><b>834</b></div>
-            <div class="viz-row"><span>Table API</span><span class="fbar" aria-hidden="true"><i style="--w:70%"></i><i class="ghost" style="--x:70%;--w:15%"></i></span><b>828</b></div>
+            <div class="viz-row"><span>Aggregate API</span><span class="fbar" aria-hidden="true"><i style="width:85%"></i></span><b>834</b></div>
+            <div class="viz-row"><span>Table API</span><span class="fbar" aria-hidden="true"><i style="width:70%"></i><i class="ghost" style="left:70%;width:15%"></i></span><b>828</b></div>
             <figcaption class="viz-note">The scale starts at 800 links. The dashed segment is the 6-record gap.</figcaption>
           </figure>
           <p class="trail">Duplicates? No → Filters? No → Deletions? No → Row-level ACLs</p>
@@ -714,10 +736,10 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <h3>Where self-service pays off first</h3>
           <p>I ranked all 443 articles by linked tickets across 4,669 category, CI and catalog groups. Requests for local admin rights turned out to be about two-thirds of all service requests, more than 34,000 a year.</p>
           <figure class="viz">
-            <div class="sbar" aria-hidden="true"><i style="--w:67%"></i></div>
+            <div class="sbar" aria-hidden="true"><i style="width:67%"></i></div>
             <div class="viz-key"><span><i class="on" aria-hidden="true"></i>Local admin rights, about two-thirds</span><span><i aria-hidden="true"></i>All other service requests</span></div>
             <hr>
-            <div class="viz-row"><span>Article links, last year</span><span class="fbar" aria-hidden="true"><i style="--w:1.8%"></i></span><b>15</b></div>
+            <div class="viz-row"><span>Article links, last year</span><span class="fbar" aria-hidden="true"><i style="width:1.8%"></i></span><b>15</b></div>
             <figcaption class="viz-note">Only 15 of 828 ticket-to-article links came in the last year.</figcaption>
           </figure>
           <p class="result"><span>Result</span><b>Found the biggest self-service opportunity: 34,000+ requests a year.</b></p>
@@ -1123,6 +1145,26 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     </div>
   </section>
 
+  <!-- EDUCATION AND CERTIFICATIONS -->
+  <section class="section" id="credentials" aria-labelledby="cred-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Education</p>
+        <h2 id="cred-title">Education and certifications</h2>
+        <p>A computer science degree finished while working full-time, a network systems diploma, and identity-focused Microsoft certifications.</p>
+      </div>
+      <div class="edu">
+        <div class="cred"><p class="code">AUG 2026</p><h3>Bachelor of Science, Computer Science</h3><p>University of Maryland Global Campus <span class="sep" aria-hidden="true">·</span> GPA 3.88/4.00 <span class="sep" aria-hidden="true">·</span> Dean's List, four terms <span class="sep" aria-hidden="true">·</span> Completed while working full-time</p></div>
+        <div class="cred"><p class="code">APR 2021</p><h3>Diploma, Computer Systems Technician (Network Systems)</h3><p>Mohawk College, Hamilton, ON</p></div>
+      </div>
+      <div class="creds">
+        <div class="cred"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam in preparation</p></div>
+        <div class="cred"><p class="code">AZ-900</p><h3>Microsoft Azure Fundamentals</h3><p class="pill ok">Certified 2024</p></div>
+        <div class="cred"><p class="code">SC-900</p><h3>Security, Compliance, and Identity Fundamentals</h3><p class="pill ok">Certified 2023</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section class="section" id="skills" aria-labelledby="skills-title">
     <div class="wrap">
@@ -1218,26 +1260,6 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <div><h4>Data and privacy</h4><p>Data reconciliation, data quality analysis, PII redaction, data minimization, regex, JSON, CSV, audit-ready reporting</p></div>
         <div><h4>ITSM and operations</h4><p>ITIL, ServiceNow (Incident, Problem, Change, Request, Knowledge, CMDB, HAM Pro, ACLs, workflows), knowledge management, IT asset management, root cause analysis, Evergreen lifecycle refresh, vendor management, VIP support</p></div>
         <div><h4>Development</h4><p>React, Node.js, PostgreSQL, Prisma, Docker, Vitest, Jest</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDENTIALS -->
-  <section class="section" id="credentials" aria-labelledby="cred-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Credentials</p>
-        <h2 id="cred-title">Certifications and education</h2>
-        <p>Identity-focused Microsoft certifications and a computer science degree finished while working full-time.</p>
-      </div>
-      <div class="creds">
-        <div class="cred"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam in preparation</p></div>
-        <div class="cred"><p class="code">AZ-900</p><h3>Microsoft Azure Fundamentals</h3><p class="pill ok">Certified 2024</p></div>
-        <div class="cred"><p class="code">SC-900</p><h3>Security, Compliance, and Identity Fundamentals</h3><p class="pill ok">Certified 2023</p></div>
-      </div>
-      <div class="edu">
-        <div class="cred"><p class="code">AUG 2026</p><h3>Bachelor of Science, Computer Science</h3><p>University of Maryland Global Campus <span class="sep" aria-hidden="true">·</span> GPA 3.88/4.00 <span class="sep" aria-hidden="true">·</span> Dean's List, four terms <span class="sep" aria-hidden="true">·</span> Completed while working full-time</p></div>
-        <div class="cred"><p class="code">APR 2021</p><h3>Diploma, Computer Systems Technician (Network Systems)</h3><p>Mohawk College, Hamilton, ON</p></div>
       </div>
     </div>
   </section>
@@ -1346,31 +1368,40 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     syncTheme();
   });
 
-  /* ---------- scrollspy: highlight the nav link for the section in view ---------- */
+  /* ---------- scrollspy: highlight the nav link for the section in view, including Contact at the very bottom ---------- */
   safely(function(){
     var nav = document.querySelector(".nav");
-    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
-    if (!nav || !links.length || !("IntersectionObserver" in window)) return;
-    var byId = {};
-    links.forEach(function(a){ byId[a.getAttribute("href").slice(1)] = a; });
-    function mark(id){
-      var active = id ? byId[id] : null;
-      links.forEach(function(a){
-        if (a === active) a.setAttribute("aria-current", "location");
-        else a.removeAttribute("aria-current");
+    if (!nav || !window.requestAnimationFrame) return;
+    var items = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]')).map(function(a){
+      return { a: a, s: document.getElementById(a.getAttribute("href").slice(1)) };
+    }).filter(function(x){ return x.s; });
+    if (!items.length) return;
+    var current = null, ticking = false;
+    function update(){
+      ticking = false;
+      var doc = document.documentElement, active = null;
+      var scrolled = window.pageYOffset || doc.scrollTop || 0;
+      if (scrolled > 0 && window.innerHeight + scrolled >= doc.scrollHeight - 2) {
+        active = items[items.length - 1];
+      } else {
+        var line = window.innerHeight * 0.4;
+        items.forEach(function(x){ if (x.s.getBoundingClientRect().top <= line) active = x; });
+      }
+      if (active === current) return;
+      current = active;
+      items.forEach(function(x){
+        if (x === active) x.a.setAttribute("aria-current", "location");
+        else x.a.removeAttribute("aria-current");
       });
       if (active && nav.scrollWidth > nav.clientWidth) {
-        var nr = nav.getBoundingClientRect(), ar = active.getBoundingClientRect();
+        var nr = nav.getBoundingClientRect(), ar = active.a.getBoundingClientRect();
         if (ar.left < nr.left || ar.right > nr.right) nav.scrollLeft += ar.left - nr.left - 12;
       }
     }
-    var opts = { rootMargin: "-40% 0px -55% 0px" };
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
-    }, opts);
-    Object.keys(byId).forEach(function(id){ var s = document.getElementById(id); if (s) io.observe(s); });
-    var hero = document.querySelector(".hero");
-    if (hero) new IntersectionObserver(function(en){ if (en[0].isIntersecting) mark(null); }, opts).observe(hero);
+    function queue(){ if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    update();
   });
 
   /* ---------- toast and copy email ---------- */
@@ -1528,17 +1559,17 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       return out;
     }
 
-    var NAMES = ["Get-Candidate","Get-Journey","Get-Experience","Get-Impact","Get-KnowledgeLibrary","Compare-ApiCount","Get-Skills","Get-Certification","Get-Location","Test-NetConnection","Get-PimRoleSetting","Start-SiteSurvey","Get-Resume","Request-Interview","Get-Date","Clear-Host","help"];
+    var NAMES = ["Get-Candidate","Get-Journey","Get-Experience","Get-Education","Get-Impact","Get-KnowledgeLibrary","Compare-ApiCount","Get-Skills","Get-Certification","Get-Location","Test-NetConnection","Get-PimRoleSetting","Start-SiteSurvey","Get-Resume","Request-Interview","Get-Date","Clear-Host","help"];
     var CMD = {
       "help": function(args, fmt){ return table(["Command","What it shows"], [
         ["Get-Candidate","Profile and target role"],
         ["Get-Journey","How each role stepped up"],
         ["Get-Experience","Five roles, newest first"],
+        ["Get-Education","Degree, diploma, certs"],
         ["Get-Impact","Results I can measure"],
         ["Get-KnowledgeLibrary","443 articles made AI-ready"],
         ["Compare-ApiCount","Tracing a 6-record gap"],
         ["Get-Skills","Tools I use, by area"],
-        ["Get-Certification","Certifications, degrees"],
         ["Get-Location","Where I can work, travel"],
         ["Test-NetConnection","A quick network check"],
         ["Get-PimRoleSetting","Just-in-time admin access"],
@@ -1551,6 +1582,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         ["Role","Senior Systems Specialist, Extreme Networks"],
         ["Focus","Entra ID, M365, Intune, networks, ServiceNow, AI automation"],
         ["Experience","5+ years, 3 as on-site technical lead at global companies"],
+        ["Education","BSc Computer Science, UMGC, 2026, GPA 3.88"],
         ["Scale","Organizations of 10,000 to 20,000+ users"],
         ["Location","Toronto, ON (open to Vancouver, Calgary, Ottawa)"],
         ["Travel","Happy to travel for work"],
@@ -1602,11 +1634,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         ["Data","Reconciliation, PII redaction, regex, JSON, CSV"],
         ["ITSM","ServiceNow APIs, ITIL, CMDB, HAM Pro, knowledge"]]); },
       "get-certification": function(){ return kv([
+        ["BSc","Computer Science, UMGC, 2026, GPA 3.88, Dean's List"],
+        ["Diploma","Computer Systems Technician, Mohawk College, 2021"],
         ["SC-300","Identity and Access Administrator, exam in preparation"],
         ["AZ-900","Azure Fundamentals, 2024"],
-        ["SC-900","Security, Compliance, and Identity Fundamentals, 2023"],
-        ["BSc","Computer Science, UMGC, 2026, GPA 3.88"],
-        ["Diploma","Computer Systems Technician, Mohawk College, 2021"]]); },
+        ["SC-900","Security, Compliance, and Identity Fundamentals, 2023"]]); },
       "get-location": function(){ return kv([
         ["City","Toronto, ON"],
         ["OpenTo","Toronto, Vancouver, Calgary, Ottawa"],
