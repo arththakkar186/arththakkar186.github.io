@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arth Thakkar · Information Systems, Identity, Networks and Automation</title>
-<meta name="description" content="Arth Thakkar is a Toronto-based information systems professional working across Microsoft Entra ID, Microsoft 365, Intune, site networks, PowerShell and AI-assisted automation, moving into an Information Systems Engineer role in Toronto, Vancouver, Calgary or Ottawa.">
+<title>Arth Thakkar · Information Systems, Identity, Networks and AI Automation</title>
+<meta name="description" content="Arth Thakkar is a Toronto-based information systems professional working across Microsoft Entra ID, Microsoft 365, Intune, site networks, ServiceNow and AI-assisted automation, moving into an Information Systems Engineer role in Toronto, Vancouver, Calgary or Ottawa.">
 <link rel="canonical" href="https://arththakkar186.github.io/">
 <meta name="theme-color" content="#F1F3F6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0A111C" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arththakkar186.github.io/">
-<meta property="og:title" content="Arth Thakkar · Information Systems, Identity, Networks and Automation">
-<meta property="og:description" content="Five years keeping IT running for organizations of 10,000 to 20,000+ users at Extreme Networks, McCain Foods, Walmart Global Tech and Deloitte. Heading for Information Systems Engineer.">
+<meta property="og:title" content="Arth Thakkar · Information Systems, Identity, Networks and AI Automation">
+<meta property="og:description" content="Five years keeping IT running for organizations of 10,000 to 20,000+ users at Extreme Networks, McCain Foods, Walmart Global Tech and Deloitte, now getting ServiceNow data ready for AI. Heading for Information Systems Engineer.">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230D1726'/%3E%3Ctext%20x='32'%20y='42'%20font-family='Arial,Helvetica,sans-serif'%20font-size='28'%20font-weight='700'%20fill='%23F1F3F6'%20text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
 <script>
 (function(){try{var t=localStorage.getItem("at-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Arth Thakkar","url":"https://arththakkar186.github.io/","jobTitle":"Senior Systems Specialist","worksFor":{"@type":"Organization","name":"Extreme Networks"},"address":{"@type":"PostalAddress","addressLocality":"Toronto","addressRegion":"ON","addressCountry":"CA"},"email":"mailto:arththakkar186@gmail.com","sameAs":["https://www.linkedin.com/in/arththakkar18"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Maryland Global Campus"},{"@type":"CollegeOrUniversity","name":"Mohawk College"}],"knowsAbout":["Information systems","PowerShell","Microsoft Entra ID","Active Directory","Privileged Identity Management","Microsoft 365","Microsoft Intune","Windows Server","Juniper Mist","Ekahau","Unified communications","SOX ITGC audits","Microsoft Graph","Claude Code","Model Context Protocol","ServiceNow"]}
+{"@context":"https://schema.org","@type":"Person","name":"Arth Thakkar","url":"https://arththakkar186.github.io/","jobTitle":"Senior Systems Specialist","worksFor":{"@type":"Organization","name":"Extreme Networks"},"address":{"@type":"PostalAddress","addressLocality":"Toronto","addressRegion":"ON","addressCountry":"CA"},"email":"mailto:arththakkar186@gmail.com","sameAs":["https://www.linkedin.com/in/arththakkar18"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Maryland Global Campus"},{"@type":"CollegeOrUniversity","name":"Mohawk College"}],"knowsAbout":["Information systems","PowerShell","Python","Microsoft Entra ID","Active Directory","Privileged Identity Management","Microsoft 365","Microsoft Intune","Windows Server","Juniper Mist","Ekahau","Unified communications","SOX ITGC audits","Microsoft Graph","Claude Code","Model Context Protocol","ServiceNow","ServiceNow Table and Aggregate APIs","Workato","Data reconciliation","PII redaction"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Instrument+Sans:wght@400..700&amp;family=Martian+Mono:wdth,wght@75..112.5,400..600&amp;display=swap">
 <style>
-/* Layout: sticky header with a theme toggle, an expanded-type name across the hero, the pitch on the left and a live
-   PowerShell window on the right. Then employers, an impact ledger, case files, a career heat map, a "Now" board,
-   a career path map, a dated timeline, a click-to-trace skills explorer, credentials, an about block and a
-   PowerShell-blue contact band. */
+/* Layout: sticky header with scrollspy and a theme toggle, an expanded-type name across the hero, the pitch on the left and a live
+   PowerShell window on the right. Then employers, an impact ledger, case files colour-tagged by career track (with data visuals
+   for the ServiceNow knowledge work), a career heat map, a "Now" board, a career path map, a dated timeline, a click-to-trace
+   skills explorer, credentials, an about block and a PowerShell-blue contact band. */
 :root{
   --paper:#F1F3F6;
   --surface:#FFFFFF;
@@ -68,6 +68,7 @@
   --console-ok:#6EE7A8;
   --console-err:#FF9C9C;
   --console-cmt:#7F9CC4;
+  --glow:rgba(28,91,184,.22);
   --shadow:0 28px 56px -30px rgba(13,23,38,.45);
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -79,14 +80,14 @@
   --grid:rgba(230,236,244,.045); --accent:#F2874A; --accent-text:#F2874A; --accent-ink:#0A111C; --accent-soft:#3A2414;
   --ok:#4FD08E; --ok-soft:#123222; --info:#8DB8FF; --info-soft:#14284A; --wall:#6E7F96; --map-bg:#0D1522;
   --tag-bg:rgba(16,26,41,.92); --trk-id:#8DB8FF; --trk-auto:#F2874A; --trk-infra:#4FD08E; --trk-people:#E8C35A;
-  --console-edge:#1D4E94; --shadow:0 28px 56px -30px rgba(0,0,0,.75);
+  --console-edge:#1D4E94; --glow:rgba(60,130,255,.2); --shadow:0 28px 56px -30px rgba(0,0,0,.75);
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0A111C; --surface:#101A29; --ink:#E6ECF4; --ink-2:#9AA8BA; --ink-3:#7F8EA3; --line:#22314A; --line-2:#172338;
   --grid:rgba(230,236,244,.045); --accent:#F2874A; --accent-text:#F2874A; --accent-ink:#0A111C; --accent-soft:#3A2414;
   --ok:#4FD08E; --ok-soft:#123222; --info:#8DB8FF; --info-soft:#14284A; --wall:#6E7F96; --map-bg:#0D1522;
   --tag-bg:rgba(16,26,41,.92); --trk-id:#8DB8FF; --trk-auto:#F2874A; --trk-infra:#4FD08E; --trk-people:#E8C35A;
-  --console-edge:#1D4E94; --shadow:0 28px 56px -30px rgba(0,0,0,.75);
+  --console-edge:#1D4E94; --glow:rgba(60,130,255,.2); --shadow:0 28px 56px -30px rgba(0,0,0,.75);
   color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -105,6 +106,12 @@ p,h1,h2,h3,h4,figure{margin:0}
 .sep{margin-inline:.2em}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+/* track colours, shared by case files, the ledger, skills groups and the career path map */
+.t-id{--trk:var(--trk-id)}
+.t-auto{--trk:var(--trk-auto)}
+.t-infra{--trk:var(--trk-infra)}
+.t-people{--trk:var(--trk-people)}
+
 /* header */
 .site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid var(--line)}
 .site-head .wrap{display:flex;align-items:center;gap:10px 20px;padding-block:12px}
@@ -112,8 +119,9 @@ p,h1,h2,h3,h4,figure{margin:0}
 .mono-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--ink);color:var(--paper);font:800 13px/1 var(--display);font-stretch:125%;letter-spacing:.02em;flex:none}
 .brand-name{font:700 16px/1 var(--display);font-stretch:112%;letter-spacing:-.01em;white-space:nowrap}
 .nav{display:flex;gap:2px}
-.nav a{font:500 14px/1 var(--body);color:var(--ink-2);text-decoration:none;padding:9px 11px;border-radius:8px;white-space:nowrap;transition:color .15s,background .15s}
+.nav a{font:500 14px/1 var(--body);color:var(--ink-2);text-decoration:none;padding:9px 11px;border-radius:8px;white-space:nowrap;transition:color .15s,background .15s,box-shadow .15s}
 .nav a:hover{color:var(--ink);background:var(--surface)}
+.nav a[aria-current]{color:var(--ink);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),inset 0 -2px 0 var(--accent)}
 .theme-btn{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;padding:0;transition:border-color .15s}
 .theme-btn:hover{border-color:var(--ink)}
 .theme-btn svg{width:18px;height:18px}
@@ -151,8 +159,9 @@ p,h1,h2,h3,h4,figure{margin:0}
 @keyframes rise{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 .name{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 
-/* live PowerShell window */
-.console-wrap{min-width:0}
+/* live PowerShell window, with a soft screen glow behind it */
+.console-wrap{position:relative;min-width:0}
+.console-wrap::before{content:"";position:absolute;inset:-7% -6% 10%;z-index:-1;pointer-events:none;border-radius:48px;background:radial-gradient(60% 55% at 50% 45%,var(--glow),transparent 72%);filter:blur(26px)}
 .console{min-width:0;border-radius:12px;overflow:hidden;background:var(--console);color:var(--console-fg);box-shadow:var(--shadow),0 0 0 1px var(--console-edge);font:400 12.5px/1.75 var(--mono);font-stretch:87.5%}
 .console-bar{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;background:var(--console-bar);font:500 12px/1 var(--body);color:var(--console-dim)}
 .console-bar .glyph{font:600 11px/1 var(--mono);color:var(--console-fg);border:1px solid var(--console-edge);border-radius:4px;padding:3px 5px}
@@ -185,14 +194,16 @@ p,h1,h2,h3,h4,figure{margin:0}
 /* brands */
 .brands{border-block:1px solid var(--line);background:var(--surface)}
 .brands .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;padding-block:20px}
-.brands ul{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;list-style:none;margin:0;padding:0}
+.brands ul{display:flex;flex-wrap:wrap;align-items:center;gap:12px 30px;list-style:none;margin:0;padding:0}
 .brands li{font:700 clamp(16px,1.7vw,20px)/1.1 var(--display);font-stretch:115%;letter-spacing:-.01em}
-.brands li.more{font:500 14px/1.3 var(--body);color:var(--ink-2)}
+.brands li small{display:block;margin-top:4px;font:500 12px/1.2 var(--body);font-stretch:100%;letter-spacing:0;color:var(--ink-2)}
+.brands li.more{font:500 14px/1.3 var(--body);color:var(--ink-2);max-width:24em}
 
 /* impact */
 .impact{padding-block:clamp(40px,5vw,64px) 0}
 .ledger{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.ledger > div{padding:clamp(18px,2.4vw,28px);display:grid;gap:10px;align-content:start;min-width:0}
+.ledger > div{position:relative;padding:clamp(22px,2.6vw,32px) clamp(18px,2.4vw,28px) clamp(18px,2.4vw,28px);display:grid;gap:10px;align-content:start;min-width:0}
+.ledger > div::before{content:"";position:absolute;top:0;left:clamp(18px,2.4vw,28px);width:44px;height:4px;border-radius:0 0 4px 4px;background:var(--trk,var(--line))}
 .ledger > div + div{border-left:1px solid var(--line)}
 .ledger b{font:800 clamp(30px,3.8vw,48px)/1 var(--display);font-stretch:110%;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
 .ledger b .unit{color:var(--accent-text)}
@@ -205,10 +216,13 @@ p,h1,h2,h3,h4,figure{margin:0}
 h2{font:800 clamp(32px,4.4vw,54px)/1 var(--display);font-stretch:118%;letter-spacing:-.03em;text-wrap:balance}
 .sec-head p:not(.eyebrow){font-size:17px;color:var(--ink-2);max-width:40em;text-wrap:pretty}
 h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-spacing:-.015em;text-wrap:balance}
+.key{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;margin:2px 0 0;padding:0;font-size:14px;color:var(--ink-2)}
+.key li{display:inline-flex;align-items:center;gap:8px}
 
 /* case files */
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.case{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,2.6vw,30px);display:grid;gap:14px;align-content:start;transition:border-color .2s ease,transform .2s ease}
+.case{position:relative;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,2.8vw,32px) clamp(20px,2.6vw,30px) clamp(20px,2.6vw,30px);display:grid;gap:14px;align-content:start;transition:border-color .2s ease,transform .2s ease}
+.case::before{content:"";position:absolute;top:-1px;left:clamp(20px,2.6vw,30px);width:44px;height:4px;border-radius:0 0 4px 4px;background:var(--trk,var(--line))}
 .case:hover{border-color:color-mix(in srgb,var(--ink) 35%,var(--line));transform:translateY(-2px)}
 .case.wide{grid-column:1 / -1;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:clamp(22px,4vw,56px);align-items:center}
 .stack{display:grid;gap:14px;min-width:0;align-content:start}
@@ -236,6 +250,32 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .dg .dot-home{fill:var(--ink)}
 .dg .dot-trip{fill:var(--accent)}
 #arr-trip path{fill:var(--accent)}
+
+/* data visuals inside case files */
+.viz{min-width:0;display:grid;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:clamp(14px,2vw,18px)}
+.viz-cap{font:600 14px/1.3 var(--body);color:var(--ink)}
+.viz-note{font-size:13px;line-height:1.45;color:var(--ink-2)}
+.viz-row{display:grid;grid-template-columns:minmax(0,10em) minmax(0,1fr) 3.4em;gap:12px;align-items:center;font-size:14px;line-height:1.3;color:var(--ink-2)}
+.viz-row b{font:700 17px/1 var(--display);font-stretch:110%;font-variant-numeric:tabular-nums;color:var(--ink);text-align:right}
+.viz-row b.neg{color:var(--accent-text)}
+.fbar{position:relative;height:12px;border-radius:4px;background:var(--line);overflow:hidden}
+.fbar i{position:absolute;top:0;bottom:0;left:var(--x,0);width:var(--w,0);min-width:3px;border-radius:4px;background:var(--trk,var(--accent))}
+.fbar i.cut{background:repeating-linear-gradient(135deg,var(--accent) 0 3px,transparent 3px 6px);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.fbar i.ghost{background:transparent;border:1.5px dashed var(--accent)}
+.viz hr{width:100%;margin:2px 0;border:0;border-top:1px dashed var(--line)}
+.sbar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--line)}
+.sbar i{width:var(--w);background:var(--trk,var(--accent))}
+.viz-key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--ink-2)}
+.viz-key span{display:inline-flex;align-items:center;gap:7px}
+.viz-key i{width:12px;height:12px;border-radius:3px;background:var(--line);flex:none}
+.viz-key i.on{background:var(--trk,var(--accent))}
+.sample{min-width:0;display:grid;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:clamp(14px,2vw,18px)}
+.sample-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.sample-head b{font:600 14px/1.3 var(--body);color:var(--ink)}
+.sample-txt{font:400 12.5px/2 var(--mono);font-stretch:87.5%;color:var(--ink);overflow-wrap:anywhere}
+.pii{padding:2px 3px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-color .25s ease,color .25s ease}
+.sample-txt[data-redacted="true"] .pii{background:var(--ink);color:transparent}
+.sample-txt[data-redacted="false"] .pii{background:var(--accent-soft);color:var(--accent-text)}
 
 /* career site survey */
 .survey-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
@@ -331,7 +371,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .tracks{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .tk{display:inline-flex;align-items:center;gap:8px;font:500 14px/1 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer}
 .tk:hover,.tk[aria-pressed="true"]{border-color:var(--ink)}
-.sw{width:22px;height:6px;border-radius:3px}
+.sw{display:inline-block;width:22px;height:6px;border-radius:3px;flex:none}
 .sw-id{background:var(--trk-id)}
 .sw-auto{background:var(--trk-auto)}
 .sw-infra{background:var(--trk-infra)}
@@ -359,7 +399,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 /* skills explorer */
 .explorer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(18px,3vw,36px);align-items:start}
 .groups{display:grid;gap:22px;min-width:0}
-.group h3{font:600 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.group h3{display:flex;align-items:center;gap:10px;font:600 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font:500 14px/1 var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 14px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
 .chip:hover{border-color:var(--ink)}
@@ -373,7 +413,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 .who b{font-weight:700}
 .who span{font:500 12px/1.4 var(--mono);color:var(--ink-2)}
 .ev-list p{color:var(--ink-2);font-size:15px}
-.toolkit{margin-top:clamp(30px,4vw,48px);padding-top:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 30px}
+.toolkit{margin-top:clamp(30px,4vw,48px);padding-top:26px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 30px}
 .toolkit > p{grid-column:1 / -1;font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text)}
 .toolkit h4{font:600 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .toolkit div p{font-size:14.5px;line-height:1.6}
@@ -474,6 +514,8 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   .ap .dot::after{width:6px;height:6px}
   .step{grid-template-columns:minmax(0,1fr)}
   .step span{justify-self:start}
+  .viz-row{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
+  .viz-row .fbar{grid-column:1 / -1;grid-row:2}
 }
 @media (max-width:440px){
   .ledger{grid-template-columns:minmax(0,1fr)}
@@ -485,12 +527,12 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .name,.caret,.status.build i::after{animation:none}
-  .case,.btn,.chip,.toast,.theme-btn,.probe,.cmap .trk,.cmap .hit{transition:none}
+  .case,.btn,.chip,.toast,.theme-btn,.probe,.cmap .trk,.cmap .hit,.pii,.nav a{transition:none}
   .case:hover{transform:none}
 }
 @media print{
   :root:not(#print){--paper:#FFFFFF;--surface:#FFFFFF;--ink:#0D1726;--ink-2:#4B5869;--ink-3:#66738A;--line:#D3DAE3;--grid:transparent;color-scheme:light}
-  .site-head,.skip,.toast,.theme-btn,.caret,.linkbtn,.probe,.console-hint,.hero::before{display:none!important}
+  .site-head,.skip,.toast,.theme-btn,.caret,.linkbtn,.probe,.console-hint,.hero::before,.console-wrap::before{display:none!important}
   .name{animation:none!important}
   .section{padding-top:32px}
   .case,.now-card,.cred,.role,.ledger,.band,.pathmap,.map-card{break-inside:avoid}
@@ -537,14 +579,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   <section class="hero" aria-labelledby="name">
     <div class="wrap">
       <div class="hero-top">
-        <p class="eyebrow">Information Systems Engineering · Identity and Access · Networks · Automation</p>
+        <p class="eyebrow">Information Systems Engineering · Identity and Access · Infrastructure · ServiceNow and AI Automation</p>
         <p class="where-pill"><i aria-hidden="true"></i><span>Toronto, ON <span class="sep" aria-hidden="true">·</span> Open to Vancouver, Calgary and Ottawa <span class="sep" aria-hidden="true">·</span> Happy to travel</span></p>
       </div>
       <h1 class="name" id="name">Arth Thakkar</h1>
       <div class="hero-grid">
         <div class="pitch">
-          <p class="lede">I run, secure and automate enterprise IT for organizations of <b>10,000 to 20,000+ users</b>, with hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune, site networks and <b>PowerShell</b>.</p>
-          <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto, where I run the site's infrastructure, co-own SOX access audits and build AI-assisted automation. I've written PowerShell since my Deloitte days, long before AI tools, and every role since has been a step up. Next stop: an <b>Information Systems Engineer</b> role in Toronto, Vancouver, Calgary or Ottawa.</p>
+          <p class="lede">I run, secure and automate enterprise IT for organizations of <b>10,000 to 20,000+ users</b>, with hands-on work in <b>Microsoft Entra ID</b>, Microsoft 365, Intune, site networks, <b>ServiceNow</b> and <b>PowerShell</b>.</p>
+          <p class="now">Currently <b>Senior Systems Specialist</b> at <b>Extreme Networks</b> in Toronto, where I run the site's infrastructure, co-own SOX access audits and get ServiceNow data ready for AI, checking every number against the source. I've automated with PowerShell since 2022, and every role since has been a step up. Next stop: an <b>Information Systems Engineer</b> role in Toronto, Vancouver, Calgary or Ottawa.</p>
           <div class="actions">
             <a class="btn primary" href="Arth_Thakkar_Resume.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
@@ -576,7 +618,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               </form>
             </div>
           </section>
-          <p class="console-hint" id="ps-hint">This window is live. Click it and type <code>help</code>, or try <code>Get-Journey</code> and <code>Start-SiteSurvey</code>.</p>
+          <p class="console-hint" id="ps-hint">This window is live. Click it and type <code>help</code>, or try <code>Compare-ApiCount</code> and <code>Start-SiteSurvey</code>.</p>
         </div>
       </div>
     </div>
@@ -587,11 +629,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     <div class="wrap">
       <p class="eyebrow">Enterprise experience</p>
       <ul>
-        <li>Extreme Networks</li>
-        <li>McCain Foods</li>
-        <li>Walmart Global Tech</li>
-        <li>Deloitte</li>
-        <li class="more">plus 10+ MSP clients, including the City of Hamilton and City of Burlington</li>
+        <li>Extreme Networks<small>2025 to now</small></li>
+        <li>McCain Foods<small>2024 to 2025</small></li>
+        <li>Walmart Global Tech<small>2023 to 2024</small></li>
+        <li>Deloitte<small>2022 to 2023</small></li>
+        <li class="more">plus 10+ MSP clients, including the City of Hamilton, City of Burlington and ZipRecruiter</li>
       </ul>
     </div>
   </section>
@@ -600,10 +642,10 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   <section class="impact" aria-label="Impact in numbers">
     <div class="wrap">
       <div class="ledger">
-        <div><b><span class="num" data-count="10000">10,000</span><span class="unit">+</span></b><p>users in the monthly SOX ITGC access audits I co-own, with zero missed audit cycles</p></div>
-        <div><b><span class="num" data-count="100">100</span><span class="unit">%</span></b><p>match between my Claude-assisted SOX evidence review and the manual review, in a side-by-side test</p></div>
-        <div><b><span class="num" data-count="40">40</span><span class="unit">%</span></b><p>fewer provisioning errors after I standardized onboarding at Walmart Global Tech</p></div>
-        <div><b><span class="num" data-count="35">35</span><span class="unit">%</span></b><p>fewer access-related incidents after I redesigned roles across 10+ client tenants</p></div>
+        <div class="t-id"><b><span class="num" data-count="10000">10,000</span><span class="unit">+</span></b><p>accounts in the monthly SOX ITGC access audits I co-own, with zero missed cycles since joining</p></div>
+        <div class="t-auto"><b><span class="num" data-count="100">100</span><span class="unit">%</span></b><p>match between my Claude-assisted SOX evidence review and the manual review, in a side-by-side pilot</p></div>
+        <div class="t-auto"><b><span class="num" data-count="1028">1,028</span></b><p>privacy redactions across 443 ServiceNow knowledge articles, made before any were sent to an AI tool</p></div>
+        <div class="t-id"><b><span class="num" data-count="40">40</span><span class="unit">%</span></b><p>fewer provisioning errors after I standardized joiner-mover-leaver at Walmart Global Tech</p></div>
       </div>
     </div>
   </section>
@@ -614,15 +656,86 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="sec-head">
         <p class="eyebrow">Selected work</p>
         <h2 id="work-title">What I changed, and what it achieved</h2>
-        <p>Nine pieces of work from the last five years, from PowerShell written before AI tools to an AI-powered capstone.</p>
+        <p>Twelve pieces of work from the last five years, from PowerShell written before AI tools to ServiceNow data made ready for AI. The tab on each card shows its career track.</p>
+        <ul class="key" aria-label="Career tracks">
+          <li><i class="sw sw-id" aria-hidden="true"></i>Identity and access</li>
+          <li><i class="sw sw-auto" aria-hidden="true"></i>Automation, AI and data</li>
+          <li><i class="sw sw-infra" aria-hidden="true"></i>Networks and infrastructure</li>
+          <li><i class="sw sw-people" aria-hidden="true"></i>People, UC and travel</li>
+        </ul>
       </div>
 
       <div class="cases">
-        <article class="case wide">
+        <article class="case wide t-auto">
+          <div class="stack">
+            <p class="tagline">Extreme Networks · Data and privacy for AI</p>
+            <h3>443 knowledge articles, ready for AI</h3>
+            <p>A project to give AI assistants and employees one trusted SharePoint knowledge library, aimed at cutting repeat questions across 100,000+ incidents and requests a year. I exported 478 article records read-only through Claude Code and an MCP server, removed 35 expired or superseded versions, and set the privacy rules for what an AI tool gets to see: 5 fields per record, with personal and internal details removed.</p>
+            <p class="result"><span>Result</span><b>443 current articles and 1,028 redactions, with a review report for sign-off.</b></p>
+          </div>
+          <div class="stack">
+            <figure class="viz">
+              <figcaption class="viz-cap">From export to AI-ready</figcaption>
+              <div class="viz-row"><span>Exported, read-only</span><span class="fbar" aria-hidden="true"><i style="--w:100%"></i></span><b>478</b></div>
+              <div class="viz-row"><span>Expired or superseded</span><span class="fbar" aria-hidden="true"><i class="cut" style="--x:92.7%;--w:7.3%"></i></span><b class="neg">&minus;35</b></div>
+              <div class="viz-row"><span>Current articles</span><span class="fbar" aria-hidden="true"><i style="--w:92.7%"></i></span><b>443</b></div>
+            </figure>
+            <div class="sample">
+              <div class="sample-head"><b>What the AI tool never sees</b><button class="linkbtn" type="button" data-redact hidden>Show original</button></div>
+              <div class="sample-txt" data-redacted="true">VPN won't connect? Email <span class="pii">jordan.lee@example.com</span> or call <span class="pii">416-555-0142</span>, check the gateway at <span class="pii">10.20.4.17</span>, then follow <span class="pii">intranet/kb/vpn-reset</span>. Article owner: <span class="pii">Jordan Lee</span>.</div>
+              <p class="viz-note">A made-up sample, not a real article. Emails, phone numbers, IP addresses, internal links and personal names were removed from every record.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="case t-id">
+          <p class="tagline">Extreme Networks · SOX ITGC</p>
+          <h3>Audit-ready access, every month</h3>
+          <p>I co-own the monthly SOX ITGC access audits covering 10,000+ accounts across hybrid Active Directory and Entra ID, collecting evidence and removing excess access to enforce least privilege. I built a Claude-assisted review of the evidence from ServiceNow requested item (RITM) and incident exports, and in a side-by-side pilot it matched my manual review 100%.</p>
+          <p class="trail">Monthly · 10,000+ accounts · AD + Entra ID · RITM + INC</p>
+          <p class="result"><span>Result</span><b>Zero missed cycles since joining, and an AI-assisted review that matched the manual check 100%.</b></p>
+        </article>
+
+        <article class="case t-auto">
+          <p class="tagline">Extreme Networks · Data reconciliation</p>
+          <h3>Six links that didn't add up</h3>
+          <p>The ServiceNow Aggregate API counted 834 ticket-to-article links, but the Table API returned 828. Before reporting any number, I ruled out duplicates, filters and deletions, and traced the gap to row-level access controls.</p>
+          <figure class="viz">
+            <div class="viz-row"><span>Aggregate API</span><span class="fbar" aria-hidden="true"><i style="--w:85%"></i></span><b>834</b></div>
+            <div class="viz-row"><span>Table API</span><span class="fbar" aria-hidden="true"><i style="--w:70%"></i><i class="ghost" style="--x:70%;--w:15%"></i></span><b>828</b></div>
+            <figcaption class="viz-note">The scale starts at 800 links. The dashed segment is the 6-record gap.</figcaption>
+          </figure>
+          <p class="trail">Duplicates? No → Filters? No → Deletions? No → Row-level ACLs</p>
+          <p class="result"><span>Result</span><b>Every figure rebuilt from checksummed raw exports, so each number can be verified.</b></p>
+        </article>
+
+        <article class="case t-auto">
+          <p class="tagline">Extreme Networks · Ticket analysis</p>
+          <h3>Where self-service pays off first</h3>
+          <p>I ranked all 443 articles by linked tickets across 4,669 category, CI and catalog groups. Requests for local admin rights turned out to be about two-thirds of all service requests, more than 34,000 a year.</p>
+          <figure class="viz">
+            <div class="sbar" aria-hidden="true"><i style="--w:67%"></i></div>
+            <div class="viz-key"><span><i class="on" aria-hidden="true"></i>Local admin rights, about two-thirds</span><span><i aria-hidden="true"></i>All other service requests</span></div>
+            <hr>
+            <div class="viz-row"><span>Article links, last year</span><span class="fbar" aria-hidden="true"><i style="--w:1.8%"></i></span><b>15</b></div>
+            <figcaption class="viz-note">Only 15 of 828 ticket-to-article links came in the last year.</figcaption>
+          </figure>
+          <p class="result"><span>Result</span><b>Found the biggest self-service opportunity: 34,000+ requests a year.</b></p>
+        </article>
+
+        <article class="case t-id">
+          <p class="tagline">McCain Foods · Identity governance</p>
+          <h3>Just-in-time admin access</h3>
+          <p>I replaced standing admin access for Entra ID and Azure roles with just-in-time activation in PIM, requiring approval, MFA, justification and a time limit. I also built access packages and recurring access reviews for privileged roles, groups and guests, giving people one standard way to request access.</p>
+          <p class="trail">Standing → Eligible → Active, time-limited</p>
+          <p class="result"><span>Result</span><b>No always-on admin accounts, and a record for auditors of who used admin rights and why.</b></p>
+        </article>
+
+        <article class="case wide t-auto">
           <div class="stack">
             <p class="tagline">Extreme Networks · Automation and AI</p>
             <h3>AI-assisted automation, kept in version control</h3>
-            <p>I build automations with Claude Code, PowerShell and ServiceNow workflows, from scheduled local jobs to API-connected cloud workflows, all versioned in GitHub. Everything runs in approval mode, so a person reviews every AI output before it touches a live system. It builds on the PowerShell I've been writing since Deloitte.</p>
+            <p>I develop automation with Claude Code, PowerShell and ServiceNow workflows, from scheduled local jobs to API-connected cloud workflows, all versioned in GitHub. Everything runs in approval mode, so a person signs off on every change before it touches a live system.</p>
             <p class="result"><span>Result</span><b>Less manual rework, with every automation tracked in GitHub and reviewed before it runs.</b></p>
           </div>
           <ol class="pipe">
@@ -633,43 +746,27 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </ol>
         </article>
 
-        <article class="case">
+        <article class="case t-auto">
           <p class="tagline">Deloitte · PowerShell automation</p>
           <h3>Hundreds of new hires, every week</h3>
-          <p>Deloitte brought on hundreds of new people every week, and each of them needed a first-day password. I wrote PowerShell scripts that set the passwords for the whole group and got the credentials ready to hand out in weekly Zoom breakout sessions for new hires. This was before AI tools were part of the job.</p>
-          <p class="trail">New-hire list → PowerShell → Zoom breakouts</p>
+          <p>Deloitte brought on hundreds of new people every week, and each of them needed a first-day password. I automated the password setup with PowerShell, replacing manual account setup, and handed out credentials in weekly Zoom onboarding sessions. This was before AI tools were part of the job.</p>
+          <p class="trail">New-hire list → PowerShell → Zoom onboarding</p>
           <p class="result"><span>Result</span><b>Weekly onboarding for hundreds of people ran on a script instead of by hand.</b></p>
         </article>
 
-        <article class="case">
-          <p class="tagline">Extreme Networks · SOX ITGC</p>
-          <h3>Audit-ready access, every month</h3>
-          <p>I co-own the monthly SOX ITGC access audits for 10,000+ users, collecting access evidence and governing hybrid Active Directory and Entra ID with least privilege. I piloted a Claude-assisted review of the evidence, using requested item (RITM) and incident exports from ServiceNow, and in a side-by-side test it matched my manual review 100%.</p>
-          <p class="trail">Monthly · 10,000+ users · AD + Entra ID · RITM + INC</p>
-          <p class="result"><span>Result</span><b>Zero missed audit cycles, and an AI-assisted review that matched the manual check 100%.</b></p>
-        </article>
-
-        <article class="case">
-          <p class="tagline">McCain Foods · Identity governance</p>
-          <h3>Just-in-time admin access</h3>
-          <p>I converted standing admin access for Entra ID and Azure roles to eligible, just-in-time activation with approval, MFA, justification and time limits. I also added access packages and recurring access reviews for privileged roles, groups and guests.</p>
-          <p class="trail">Standing → Eligible → Active, time-limited</p>
-          <p class="result"><span>Result</span><b>Admin rights exist only when someone needs them, with an audit trail.</b></p>
-        </article>
-
-        <article class="case">
+        <article class="case t-id">
           <p class="tagline">Walmart Global Tech · Identity lifecycle</p>
           <h3>Onboarding without the errors</h3>
-          <p>I standardized joiner-mover-leaver processes for 5,000+ identities in a 20,000+ user hybrid environment, and built account and group templates that new site launches adopted.</p>
+          <p>I owned the identity lifecycle for 5,000+ identities in a hybrid environment of 20,000+ users, and standardized joiner-mover-leaver with account and group templates that were later used for new sites.</p>
           <p class="trail">Joiner → Mover → Leaver</p>
           <p class="result"><span>Result</span><b>40% fewer provisioning errors.</b></p>
         </article>
 
-        <article class="case wide">
+        <article class="case wide t-people">
           <div class="stack">
             <p class="tagline">McCain Foods · Walmart Global Tech · On the road</p>
             <h3>Town halls in <span class="nw">Florenceville-Bristol</span> and Bentonville</h3>
-            <p>Travel has been part of my career, and it's a part I enjoy. I travelled to host executive town halls on-site in Florenceville-Bristol, NB for McCain Foods and in Bentonville, AR for Walmart, handling the technical delivery in Teams Rooms. At McCain I was also the on-site support for the UC engineering team, which is where my unified communications knowledge really grew.</p>
+            <p>Travel has been part of my career, and it's a part I enjoy. I hosted executive town halls on-site in Florenceville-Bristol, NB for McCain Foods and in Bentonville, AR for Walmart, handling the technical delivery. At McCain I ran the Teams Rooms setup with the UC engineering team, both at the Toronto head office and on-site.</p>
             <p class="result"><span>Result</span><b>Recognized by senior executives at both companies.</b></p>
           </div>
           <figure class="travel">
@@ -694,28 +791,28 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </figure>
         </article>
 
-        <article class="case">
+        <article class="case t-infra">
           <p class="tagline">Extreme Networks · Site infrastructure</p>
           <h3>A whole site, no local network team</h3>
-          <p>The Toronto office has no local NetOps staff, so the infrastructure is mine: switches and edge-to-core fabric links, wireless, Windows servers, backup test restores and badge access. The network side started at Walmart, where I partnered with NetOps on switches and access points and managed access points in the Juniper Mist cloud portal.</p>
-          <p class="trail">Core fabric → Edge switches → Wi-Fi · Servers</p>
+          <p>The Toronto office has no local NetOps team, so the infrastructure is mine: I install switches and connect them to the core fabric, maintain wireless access points, patch and monitor Windows servers, and run test restores to prove backups can be recovered. The network side started at Walmart, where I partnered with NetOps on switches and access points in the Juniper Mist portal.</p>
+          <p class="trail">Core fabric → Edge switches → Wi-Fi · Servers · Backups</p>
           <p class="result"><span>Result</span><b>One on-site lead covers the network, servers, backups and executive support.</b></p>
         </article>
 
-        <article class="case">
+        <article class="case t-id">
           <p class="tagline">Audcomp (MSP) · Access design</p>
           <h3>Cleaner roles across client tenants</h3>
-          <p>I redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including the City of Hamilton and City of Burlington. It was my first role after Mohawk College, and where my identity work began.</p>
+          <p>I redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including the City of Hamilton, City of Burlington and ZipRecruiter. It was my first role after Mohawk College, and where my identity work began.</p>
           <p class="trail">10+ tenants · RBAC · Security groups</p>
           <p class="result"><span>Result</span><b>35% fewer access-related incidents at 99.9% uptime.</b></p>
         </article>
 
-        <article class="case wide">
+        <article class="case wide t-auto">
           <div class="stack">
-            <p class="tagline">UMGC capstone · AI Cloud Lead · 6-person team · 2026</p>
+            <p class="tagline">UMGC capstone · AI Cloud Lead · 6-person team · May to Jul 2026</p>
             <h3>MISE, an AI-powered inventory platform</h3>
-            <p>A restaurant inventory platform that tracks ingredients, flags low stock and expiring items, and suggests menu specials with Claude on AWS Bedrock. I designed the PostgreSQL data model with Prisma, built the React add, edit and delete flow with CSV export, and wired dashboard API endpoints with Vitest and Jest tests.</p>
-            <p class="result"><span>Result</span><b>The instructor called it one of the most innovative projects in 10 years of teaching the class.</b></p>
+            <p>I led AI and cloud work for a restaurant inventory platform that tracks ingredients, flags low stock and expiring items, and suggests menu specials with Claude on AWS Bedrock. I owned the Prisma data model, migrations and seed data, and built the React inventory workflow, CSV export and dashboard APIs with Vitest and Jest tests.</p>
+            <p class="result"><span>Result</span><b>The instructor called it one of the most innovative capstone projects in 10 years of teaching the course.</b></p>
           </div>
           <div class="stack">
             <div class="tags">
@@ -741,7 +838,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="sec-head">
         <p class="eyebrow">Career site survey</p>
         <h2 id="survey-title">My career, mapped like a Wi-Fi survey</h2>
-        <p>When McCain opened a new office, I ran an Ekahau survey to map its Wi-Fi coverage. Here is my career drawn the same way: each access point is a role, and its coverage grows with time on the job.</p>
+        <p>When McCain opened a new office, I ran an Ekahau survey and produced the heat maps the network team used to plan coverage. Here is my career drawn the same way: each access point is a role, and its coverage grows with time on the job.</p>
       </div>
       <div class="survey-grid">
         <figure class="map-card">
@@ -783,28 +880,28 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="now-grid">
         <article class="now-card">
           <p class="status build"><i aria-hidden="true"></i>In build</p>
-          <h3>Knowledge-base gap finder</h3>
-          <p>Claude pulls our ServiceNow knowledge articles, compares them with the source documentation and flags anything missing or out of date, so the service desk answers from current information.</p>
+          <h3>One trusted knowledge library for AI</h3>
+          <p>A SharePoint library that AI assistants and employees can both rely on, aimed at cutting repeat questions across 100,000+ incidents and requests a year. I prepared the ServiceNow data, and every figure traces back to a checksummed raw export.</p>
           <ol class="steps">
-            <li>Pull articles</li>
-            <li>Compare with source</li>
-            <li>Flag gaps</li>
-            <li>Human review</li>
+            <li>Export 478 records</li>
+            <li>Remove 35 old versions</li>
+            <li>Redact 1,028 details</li>
+            <li>Rank 443 articles</li>
           </ol>
         </article>
 
         <article class="now-card">
           <p class="status next"><i aria-hidden="true"></i>Next phase</p>
           <h3>SOX evidence, straight from ServiceNow</h3>
-          <p>My Claude-assisted SOX review already matched the manual review 100%, working from exported requested items (RITMs) and incidents. The next phase pulls those records directly from ServiceNow, removing the manual export step.</p>
+          <p>My Claude-assisted SOX review already matched the manual review 100%, working from exported requested items (RITMs) and incidents. The next version pulls those records directly from ServiceNow, removing the manual export step.</p>
           <p class="trail">Manual export → Direct pull · approval mode</p>
         </article>
 
         <article class="now-card">
           <p class="status learn"><i aria-hidden="true"></i>Learning</p>
           <h3>AI orchestration, done safely</h3>
-          <p>Weekly architecture sessions with our IT automation lead on connecting AI agents to IT systems through MCP servers and REST APIs, and on Microsoft Graph app registrations, including when to use delegated access and when to use a certificate-based service principal.</p>
-          <div class="tags"><span class="tag">MCP</span><span class="tag">Microsoft Graph</span><span class="tag">Service principals</span><span class="tag">REST APIs</span></div>
+          <p>Weekly architecture sessions with our IT automation lead on MCP and REST integrations through Workato, Entra app registrations, including when to use delegated access and when to use certificate-based access, and security reviews for each new integration.</p>
+          <div class="tags"><span class="tag">MCP</span><span class="tag">Workato</span><span class="tag">REST APIs</span><span class="tag">Entra app registrations</span><span class="tag">Microsoft Graph</span></div>
         </article>
 
         <article class="now-card">
@@ -826,14 +923,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="sec-head">
         <p class="eyebrow">Career path</p>
         <h2 id="path-title">Heading for Information Systems Engineer</h2>
-        <p>Each role added a track. Identity came first, then automation, then networks and the people side of IT. An Information Systems Engineer needs all four, and Extreme Networks is the first role where I run every one of them at once.</p>
+        <p>Each role added a track. Identity came first, then automation, then networks and the people side of IT. At Extreme Networks the automation track grew into AI and data work. An Information Systems Engineer needs all four, and Extreme Networks is the first role where I run every one of them at once.</p>
       </div>
       <figure class="pathmap">
         <p class="scroll-hint">Swipe sideways to follow the whole path.</p>
         <div class="pathscroll">
           <svg class="cmap" id="cmap" viewBox="0 88 1120 250" role="img" aria-labelledby="cmap-t cmap-d">
           <title id="cmap-t">Career path toward Information Systems Engineer</title>
-          <desc id="cmap-d">Five roles from 2021 to 2025, each adding skills in identity and access, automation, networks and infrastructure, and people, UC and travel. All four tracks continue to the next stop, Information Systems Engineer.</desc>
+          <desc id="cmap-d">Five roles from 2021 to 2025, each adding skills in identity and access; automation, AI and data; networks and infrastructure; and people, UC and travel. All four tracks continue to the next stop, Information Systems Engineer.</desc>
           <line class="trk trk-id" data-trk="id" x1="95" y1="150" x2="1040" y2="150"/>
           <line class="trk trk-auto" data-trk="auto" x1="285" y1="172" x2="1040" y2="172"/>
           <line class="trk trk-infra" data-trk="infra" x1="95" y1="194" x2="1040" y2="194"/>
@@ -898,7 +995,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <figcaption>
           <ul class="tracks">
             <li><button type="button" class="tk" data-trk="id" aria-pressed="false"><i class="sw sw-id" aria-hidden="true"></i>Identity and access</button></li>
-            <li><button type="button" class="tk" data-trk="auto" aria-pressed="false"><i class="sw sw-auto" aria-hidden="true"></i>Automation</button></li>
+            <li><button type="button" class="tk" data-trk="auto" aria-pressed="false"><i class="sw sw-auto" aria-hidden="true"></i>Automation, AI and data</button></li>
             <li><button type="button" class="tk" data-trk="infra" aria-pressed="false"><i class="sw sw-infra" aria-hidden="true"></i>Networks and infrastructure</button></li>
             <li><button type="button" class="tk" data-trk="people" aria-pressed="false"><i class="sw sw-people" aria-hidden="true"></i>People, UC and travel</button></li>
           </ul>
@@ -914,7 +1011,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="sec-head">
         <p class="eyebrow">Experience</p>
         <h2 id="exp-title">Five years, five organizations</h2>
-        <p>Each role has been a step up from the last, from MSP systems administration to leading site infrastructure, identity governance and automation. I've enjoyed every one of them.</p>
+        <p>Each role has been a step up from the last, from MSP systems administration to three years as the on-site technical lead at global companies, running site infrastructure, identity governance, ServiceNow data and automation. I've enjoyed every one of them.</p>
       </div>
 
       <ol class="timeline">
@@ -923,22 +1020,25 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <p class="when">Sep 2025 to Present</p>
             <p class="badge">Current role</p>
             <p class="co">Extreme Networks</p>
-            <p class="place">Toronto, ON</p>
+            <p class="place">Toronto, ON · ITOT team</p>
           </div>
           <div class="detail">
             <h3>Senior Systems Specialist (Infrastructure Site Lead)</h3>
-            <p class="step"><span>Step up</span>Owning a whole site, plus SOX audits and AI-assisted automation.</p>
+            <p class="step"><span>Step up</span>Owning a whole site and SOX audits, and getting ServiceNow data ready for AI.</p>
             <ul>
-              <li>Lead site infrastructure with no local NetOps staff: switches and edge-to-core fabric links, wireless, Windows servers, backup test restores and badge access.</li>
-              <li>Co-own monthly SOX ITGC access audits for 10,000+ users and govern hybrid Active Directory and Entra ID with least privilege, with zero missed audit cycles.</li>
-              <li>Piloted a Claude-assisted review of SOX audit evidence from ServiceNow requested item (RITM) and incident exports. In a side-by-side test it matched the manual review 100%, and I'm now extending it to pull records directly from ServiceNow.</li>
-              <li>Build AI-assisted automation with Claude Code, PowerShell and GitHub, in version-controlled repositories for scheduled and API-connected jobs, with approval before any change goes live.</li>
-              <li>Write IT knowledge articles with Claude, and I'm building a workflow that compares ServiceNow knowledge articles with source documentation and flags gaps.</li>
-              <li>Partner with the IT automation lead in weekly architecture sessions on the AI orchestration roadmap: MCP integrations, Microsoft Graph app registrations and security review for new integrations.</li>
-              <li>Work with Oracle IT and HR to diagnose and fix automation issues in business-critical workflows.</li>
-              <li>Primary face of IT for the Canadian office, supporting senior leadership and town halls in Teams Rooms and Zoom Rooms, and running the Evergreen hardware refresh with 5 vendors.</li>
+              <li>Run all site infrastructure for the Toronto office with no local NetOps team: install switches and connect them to the core fabric, maintain wireless access points, patch and monitor Windows servers, and run test restores to prove backups can be recovered.</li>
+              <li>Co-own monthly SOX ITGC access audits covering 10,000+ accounts across hybrid Active Directory and Entra ID, collecting evidence and removing excess access to enforce least privilege, with zero missed cycles since joining.</li>
+              <li>Built a Claude-assisted review of SOX evidence from ServiceNow RITM and incident exports to cut manual evidence checks. In a side-by-side pilot it matched the manual review 100%, and the next version pulls records directly from ServiceNow.</li>
+              <li>Prepared ServiceNow data for one trusted SharePoint knowledge library for AI assistants and employees, aimed at reducing repeat questions across 100,000+ incidents and requests a year. Exported 478 article records read-only through Claude Code and an MCP server, then removed 35 expired or superseded versions, leaving 443 current articles.</li>
+              <li>Traced a 6-record gap between the ServiceNow Aggregate and Table APIs (834 vs 828 links) to row-level access controls after ruling out duplicates, filters and deletions, then rebuilt every figure from checksummed raw exports so each number could be verified.</li>
+              <li>Set the privacy rules for sending articles to an AI tool: 5 fields per record, with emails, phone numbers, IP addresses, internal links and personal names removed. The pass made 1,028 redactions across 443 articles, with a review report for sign-off.</li>
+              <li>Ranked all 443 articles by linked tickets across 4,669 category, CI and catalog groups. Found that local admin rights requests were about two-thirds of all service requests (34,000+ a year), the biggest self-service opportunity, and that only 15 of 828 ticket-to-article links came in the last year.</li>
+              <li>Develop AI-assisted automation with Claude Code, PowerShell and ServiceNow workflows, version-controlled in GitHub and run in approval mode with human sign-off on every change.</li>
+              <li>Join weekly architecture sessions with the IT automation lead on MCP and REST integrations through Workato, Entra app registrations (delegated vs certificate-based access) and security reviews.</li>
+              <li>Lead root cause analysis with Oracle IT and HR on failed business-critical workflow automations, and coordinate the fixes.</li>
+              <li>Serve as the primary IT contact for the Canadian office and its senior leadership, including town halls in Teams Rooms and Zoom Rooms, and run the Evergreen hardware refresh with 5 vendors (Dell, Apple, Lenovo, SHI, CDW).</li>
             </ul>
-            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">PowerShell</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">Microsoft Graph</span><span class="tag">GitHub</span><span class="tag">ServiceNow</span></div>
+            <div class="tags"><span class="tag">Entra ID</span><span class="tag">Hybrid AD</span><span class="tag">SOX ITGC</span><span class="tag">ServiceNow APIs</span><span class="tag">PII redaction</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">Workato</span><span class="tag">PowerShell</span><span class="tag">GitHub</span></div>
           </div>
         </li>
 
@@ -950,15 +1050,14 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           </div>
           <div class="detail">
             <h3>Regional Technology Specialist (IT Operations Site Lead)</h3>
-            <p class="step"><span>Step up</span>An executive-facing site lead role, identity governance in Entra and hands-on UC engineering.</p>
+            <p class="step"><span>Step up</span>An executive-facing site lead role, with identity governance in Entra and Teams Rooms alongside UC engineering.</p>
             <ul>
-              <li>Moved Entra ID and Azure admin roles to just-in-time activation in Entra PIM, with approval, MFA, justification and time limits.</li>
-              <li>Built Entra ID Governance access packages and recurring access reviews for privileged roles, groups and guest users.</li>
-              <li>Designed Intune compliance, configuration and app-protection policies for the corporate iOS fleet, from Apple Business Manager enrolment to retirement.</li>
-              <li>Ran an Ekahau wireless survey and produced the heat maps when a new office opened.</li>
-              <li>Was the on-site support for the UC engineering team, which deepened my knowledge of unified communications and Teams Rooms.</li>
-              <li>Travelled to Florenceville-Bristol, NB to host executive town halls on-site, and was recognized by senior executives for the work.</li>
-              <li>Primary technology representative for the Toronto head office of a 20,000-employee organization, supporting C-suite and global executives.</li>
+              <li>Replaced standing admin access for Entra ID and Azure roles with just-in-time PIM activation requiring approval, MFA, justification and a time limit, removing always-on admin accounts and giving auditors a record of who used admin rights and why.</li>
+              <li>Built Entra ID Governance access packages and recurring access reviews for privileged roles, groups and guest users, giving people one standard way to request access and removing it once no longer needed.</li>
+              <li>Designed and enforced Intune compliance, configuration and app protection policies for the corporate iOS fleet, from Apple Business Manager enrolment to retirement.</li>
+              <li>Ran an Ekahau wireless site survey for a new office and produced heat maps the network team used to plan Wi-Fi coverage.</li>
+              <li>Served as the primary technology contact for C-suite and global executives at the Toronto head office, and the sole liaison to global IT infrastructure teams for a 20,000-employee organization.</li>
+              <li>Hosted executive town halls at the Toronto head office and on-site in Florenceville-Bristol, NB, running the Teams Rooms setup with the UC engineering team, and was recognized by senior executives for the delivery.</li>
             </ul>
             <div class="tags"><span class="tag">Entra PIM</span><span class="tag">Access reviews</span><span class="tag">Access packages</span><span class="tag">Intune</span><span class="tag">Apple Business Manager</span><span class="tag">Ekahau</span><span class="tag">Teams Rooms</span></div>
           </div>
@@ -974,14 +1073,13 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>System Support Specialist II (Technical Site Lead)</h3>
             <p class="step"><span>Step up</span>My first site lead role, and my first real network work alongside NetOps.</p>
             <ul>
-              <li>Owned the identity lifecycle for 5,000+ identities in a 20,000+ user hybrid environment.</li>
-              <li>Cut provisioning errors by 40% by standardizing joiner-mover-leaver processes and account and group templates.</li>
-              <li>Resolved 1,000+ incidents a month at 100% SLA compliance in ServiceNow and improved global triage efficiency by 25%.</li>
-              <li>Partnered with NetOps on switches and access points, and handled basic access point management in the Juniper Mist cloud portal.</li>
+              <li>Owned the identity lifecycle for 5,000+ identities in a hybrid environment of 20,000+ users.</li>
+              <li>Cut provisioning errors by 40% by standardizing joiner-mover-leaver with account and group templates, later used for new sites.</li>
+              <li>Resolved 1,000+ incidents a month across identity, endpoint, hardware and network platforms with 100% SLA compliance in ServiceNow, and improved global triage efficiency by 25% by finding and fixing the root causes of repeat issues.</li>
+              <li>Secured Windows and macOS endpoints with SCCM and Jamf Pro, led ServiceNow CMDB inventory audits to keep asset records accurate, and partnered with NetOps on switches and access points in the Juniper Mist portal.</li>
               <li>Travelled to Bentonville, AR to host town halls, managing the technical delivery and earning praise from senior leadership.</li>
-              <li>Secured Windows and macOS endpoints with SCCM and Jamf Pro.</li>
             </ul>
-            <div class="tags"><span class="tag">Identity lifecycle</span><span class="tag">Active Directory</span><span class="tag">ServiceNow</span><span class="tag">Juniper Mist</span><span class="tag">SCCM</span><span class="tag">Jamf Pro</span></div>
+            <div class="tags"><span class="tag">Identity lifecycle</span><span class="tag">Active Directory</span><span class="tag">ServiceNow</span><span class="tag">CMDB</span><span class="tag">Juniper Mist</span><span class="tag">SCCM</span><span class="tag">Jamf Pro</span></div>
           </div>
         </li>
 
@@ -995,12 +1093,12 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>Information Technology Analyst</h3>
             <p class="step"><span>Step up</span>Automation at scale, with hundreds of new hires coming through every week.</p>
             <ul>
-              <li>Ran joiner-mover-leaver processes for a 10,000-user practice, revoking access promptly at exit.</li>
-              <li>Wrote PowerShell scripts, before AI tools, that set passwords for hundreds of new hires a week, with credentials handed out in weekly Zoom breakout sessions.</li>
-              <li>Automated Tier 2 and Tier 3 access resolution with PowerShell, and rebuilt the knowledge base and escalation procedures.</li>
-              <li>Supported partners and senior leaders at 95% customer satisfaction.</li>
+              <li>Managed joiner-mover-leaver for a 10,000-user practice, coordinating hardware, software and badge access with Facilities and removing access promptly when people left.</li>
+              <li>Automated password setup for hundreds of new hires each week with PowerShell, replacing manual account setup, and handed out credentials in weekly Zoom onboarding sessions.</li>
+              <li>Automated common Tier 2 and Tier 3 access fixes with PowerShell and rebuilt the knowledge base and escalation procedures, so recurring issues were solved the same way every time. Trained staff on applications and security practices.</li>
+              <li>Supported partners and senior leaders on devices, Microsoft 365 and Teams Rooms, earning a 95% customer satisfaction score.</li>
             </ul>
-            <div class="tags"><span class="tag">Joiner-mover-leaver</span><span class="tag">PowerShell</span><span class="tag">Microsoft 365</span><span class="tag">Zoom</span><span class="tag">Knowledge base</span></div>
+            <div class="tags"><span class="tag">Joiner-mover-leaver</span><span class="tag">PowerShell</span><span class="tag">Microsoft 365</span><span class="tag">Teams Rooms</span><span class="tag">Knowledge base</span></div>
           </div>
         </li>
 
@@ -1014,11 +1112,11 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             <h3>Systems Administrator, Identity and Access Management</h3>
             <p class="step"><span>Start</span>Identity and Microsoft 365 across 10+ client tenants, after finishing at Mohawk College.</p>
             <ul>
-              <li>Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, cutting access-related incidents by 35% at 99.9% uptime.</li>
-              <li>Designed backup and recovery with Barracuda, Veeam and Microsoft cloud backup, with quarterly audits and cloud-to-cloud restores.</li>
-              <li>Deployed Microsoft Defender and EDR baselines to meet government audit requirements for public-sector clients.</li>
+              <li>Cut access-related incidents by 35% by redesigning roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including the City of Hamilton, City of Burlington and ZipRecruiter, while keeping 99.9% uptime.</li>
+              <li>Designed and managed client backup and recovery with Barracuda, Veeam and Microsoft cloud backup, and ran quarterly backup audits and cloud-to-cloud restores to prove data could be recovered.</li>
+              <li>Deployed Microsoft Defender and EDR baselines that helped public-sector clients meet government audit requirements.</li>
             </ul>
-            <div class="tags"><span class="tag">Microsoft 365</span><span class="tag">Azure</span><span class="tag">RBAC</span><span class="tag">Defender</span><span class="tag">Veeam</span></div>
+            <div class="tags"><span class="tag">Microsoft 365</span><span class="tag">Azure</span><span class="tag">RBAC</span><span class="tag">Defender</span><span class="tag">Veeam</span><span class="tag">Barracuda</span></div>
           </div>
         </li>
       </ol>
@@ -1037,7 +1135,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="explorer">
         <div class="groups">
           <div class="group">
-            <h3>Identity and access</h3>
+            <h3><i class="sw sw-id" aria-hidden="true"></i>Identity and access</h3>
             <div class="chips">
               <button class="chip" type="button" data-skill="entra" aria-pressed="true">Microsoft Entra ID</button>
               <button class="chip" type="button" data-skill="pim" aria-pressed="false">Privileged Identity Management</button>
@@ -1046,11 +1144,31 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               <button class="chip" type="button" data-skill="ad" aria-pressed="false">Active Directory</button>
               <button class="chip" type="button" data-skill="jml" aria-pressed="false">Joiner-mover-leaver</button>
               <button class="chip" type="button" data-skill="sox" aria-pressed="false">SOX ITGC</button>
-              <button class="chip" type="button" data-skill="graph" aria-pressed="false">Microsoft Graph and app registrations</button>
+              <button class="chip" type="button" data-skill="graph" aria-pressed="false">App registrations and Microsoft Graph</button>
             </div>
           </div>
           <div class="group">
-            <h3>Endpoint and Microsoft 365</h3>
+            <h3><i class="sw sw-auto" aria-hidden="true"></i>Data and privacy</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-skill="recon" aria-pressed="false">Data reconciliation</button>
+              <button class="chip" type="button" data-skill="pii" aria-pressed="false">PII redaction and data minimization</button>
+              <button class="chip" type="button" data-skill="analysis" aria-pressed="false">Ticket and data analysis</button>
+            </div>
+          </div>
+          <div class="group">
+            <h3><i class="sw sw-auto" aria-hidden="true"></i>Automation and AI</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-skill="ps" aria-pressed="false">PowerShell</button>
+              <button class="chip" type="button" data-skill="claude" aria-pressed="false">Claude Code, MCP and GitHub</button>
+              <button class="chip" type="button" data-skill="snow" aria-pressed="false">ServiceNow and its APIs</button>
+              <button class="chip" type="button" data-skill="workato" aria-pressed="false">Workato and REST APIs</button>
+              <button class="chip" type="button" data-skill="bedrock" aria-pressed="false">AWS Bedrock</button>
+              <button class="chip" type="button" data-skill="kb" aria-pressed="false">Knowledge management</button>
+              <button class="chip" type="button" data-skill="rca" aria-pressed="false">Root cause analysis</button>
+            </div>
+          </div>
+          <div class="group">
+            <h3><i class="sw sw-infra" aria-hidden="true"></i>Endpoint and Microsoft 365</h3>
             <div class="chips">
               <button class="chip" type="button" data-skill="intune" aria-pressed="false">Microsoft Intune</button>
               <button class="chip" type="button" data-skill="jamf" aria-pressed="false">Jamf Pro</button>
@@ -1060,17 +1178,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             </div>
           </div>
           <div class="group">
-            <h3>Automation and AI</h3>
-            <div class="chips">
-              <button class="chip" type="button" data-skill="ps" aria-pressed="false">PowerShell</button>
-              <button class="chip" type="button" data-skill="claude" aria-pressed="false">Claude Code, MCP and GitHub</button>
-              <button class="chip" type="button" data-skill="bedrock" aria-pressed="false">AWS Bedrock</button>
-              <button class="chip" type="button" data-skill="snow" aria-pressed="false">ServiceNow</button>
-              <button class="chip" type="button" data-skill="kb" aria-pressed="false">Knowledge documentation</button>
-            </div>
-          </div>
-          <div class="group">
-            <h3>Networks and infrastructure</h3>
+            <h3><i class="sw sw-infra" aria-hidden="true"></i>Networks and infrastructure</h3>
             <div class="chips">
               <button class="chip" type="button" data-skill="net" aria-pressed="false">Switching and fabric</button>
               <button class="chip" type="button" data-skill="wifi" aria-pressed="false">Wireless, Mist and Ekahau</button>
@@ -1079,7 +1187,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
             </div>
           </div>
           <div class="group">
-            <h3>People and communications</h3>
+            <h3><i class="sw sw-people" aria-hidden="true"></i>People and communications</h3>
             <div class="chips">
               <button class="chip" type="button" data-skill="exec" aria-pressed="false">Executive support</button>
               <button class="chip" type="button" data-skill="uc" aria-pressed="false">Unified communications</button>
@@ -1093,21 +1201,23 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
           <p class="ev-cap">Where I've used it</p>
           <p class="ev-skill" id="ev-skill">Microsoft Entra ID</p>
           <ol class="ev-list" id="ev-list">
-            <li><p class="who"><b>Extreme Networks</b><span>Senior Systems Specialist · 2025 to now</span></p><p>Govern hybrid Active Directory and Entra ID with least privilege, backed by monthly SOX ITGC access audits for 10,000+ users.</p></li>
-            <li><p class="who"><b>McCain Foods</b><span>Regional Technology Specialist · 2024 to 2025</span></p><p>Ran Entra PIM for Entra ID and Azure roles, and built Entra ID Governance access packages and access reviews.</p></li>
-            <li><p class="who"><b>Audcomp (MSP)</b><span>Systems Administrator, IAM · 2021 to 2022</span></p><p>Set up identity for Microsoft 365 and Azure client tenants, redesigning roles and security groups.</p></li>
+            <li><p class="who"><b>Extreme Networks</b><span>Senior Systems Specialist · 2025 to now</span></p><p>Govern hybrid Active Directory and Entra ID with least privilege, collecting evidence and removing excess access in monthly SOX ITGC audits for 10,000+ accounts.</p></li>
+            <li><p class="who"><b>McCain Foods</b><span>Regional Technology Specialist · 2024 to 2025</span></p><p>Moved Entra ID and Azure admin roles to just-in-time activation in PIM, and built Entra ID Governance access packages and access reviews.</p></li>
+            <li><p class="who"><b>Audcomp (MSP)</b><span>Systems Administrator, IAM · 2021 to 2022</span></p><p>Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients.</p></li>
           </ol>
         </div>
       </div>
 
       <div class="toolkit">
         <p>Full toolkit</p>
-        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect Sync, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2, Authenticator), SSPR, Entra ID Protection, SSO (SAML, OIDC, OAuth 2.0), app registrations and service principals, Microsoft Graph, RBAC, B2B guest access, Zero Trust</p></div>
-        <div><h4>Identity governance</h4><p>Privileged Identity Management, access reviews, entitlement management and access packages, lifecycle workflows, joiner-mover-leaver, sign-in and audit logs, SOX ITGC audit evidence, segregation of duties</p></div>
-        <div><h4>Endpoint and security</h4><p>Microsoft Intune, Jamf Pro, SCCM (Configuration Manager), Apple Business Manager, Windows 10 and 11, macOS, iOS, Microsoft Defender, EDR, Defender for Cloud Apps</p></div>
-        <div><h4>Microsoft 365 and UC</h4><p>Microsoft 365, Exchange Online, SharePoint, Teams, unified communications, Teams Rooms, Zoom Rooms, licensing, Microsoft Azure, AWS Bedrock</p></div>
-        <div><h4>Automation and AI</h4><p>PowerShell (since 2022), Claude Code, Anthropic Claude, Model Context Protocol (MCP), LLM API integration, prompt engineering, human-in-the-loop validation, AI-assisted audit evidence review, ServiceNow workflows, REST APIs, Git, GitHub, Docker, React, Node.js, PostgreSQL</p></div>
-        <div><h4>Infrastructure and ITSM</h4><p>Windows Server, backup and recovery (Veeam, Barracuda), switching and fabric networks, Juniper Mist, Ekahau site survey, TCP/IP, DNS, DHCP, VPN, ITIL, ServiceNow (Incident, Problem, Change, Knowledge, CMDB, HAM Pro), knowledge base management, vendor management</p></div>
+        <div><h4>Identity and access</h4><p>Microsoft Entra ID (Azure AD), Active Directory, hybrid identity (Entra Connect, Cloud Sync), Conditional Access, MFA, passwordless (Windows Hello for Business, FIDO2), SSPR, SSO (SAML, OIDC, OAuth 2.0), app registrations, service principals, RBAC, custom roles, administrative units, dynamic groups, B2B, Zero Trust</p></div>
+        <div><h4>Identity governance</h4><p>Privileged Identity Management, access reviews, entitlement management, access packages, lifecycle workflows, joiner-mover-leaver, sign-in and audit logs, SOX ITGC audit evidence, segregation of duties</p></div>
+        <div><h4>Endpoint and Microsoft 365</h4><p>Microsoft Intune (MDM, MAM), Jamf Pro, SCCM, Apple Business Manager, Windows 10 and 11, macOS, iOS, Microsoft Defender, EDR, Exchange Online, SharePoint, Teams, unified communications, Teams Rooms, Zoom Rooms</p></div>
+        <div><h4>Infrastructure and networking</h4><p>Microsoft Azure, Windows Server, patching, backup and recovery (Veeam, Barracuda), switching, fabric networks, wireless access points, Juniper Mist, Ekahau site survey, TCP/IP, DNS, DHCP, VPN, badge access</p></div>
+        <div><h4>Automation and AI</h4><p>Claude Code, Model Context Protocol (MCP), PowerShell, Python, Microsoft Graph API, REST APIs, ServiceNow Table and Aggregate APIs, Workato, AWS Bedrock, LLM API integration, prompt engineering, human-in-the-loop validation, Git, GitHub</p></div>
+        <div><h4>Data and privacy</h4><p>Data reconciliation, data quality analysis, PII redaction, data minimization, regex, JSON, CSV, audit-ready reporting</p></div>
+        <div><h4>ITSM and operations</h4><p>ITIL, ServiceNow (Incident, Problem, Change, Request, Knowledge, CMDB, HAM Pro, ACLs, workflows), knowledge management, IT asset management, root cause analysis, Evergreen lifecycle refresh, vendor management, VIP support</p></div>
+        <div><h4>Development</h4><p>React, Node.js, PostgreSQL, Prisma, Docker, Vitest, Jest</p></div>
       </div>
     </div>
   </section>
@@ -1121,7 +1231,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <p>Identity-focused Microsoft certifications and a computer science degree finished while working full-time.</p>
       </div>
       <div class="creds">
-        <div class="cred"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam pending</p></div>
+        <div class="cred"><p class="code">SC-300</p><h3>Microsoft Identity and Access Administrator</h3><p class="pill wip">Training complete · exam in preparation</p></div>
         <div class="cred"><p class="code">AZ-900</p><h3>Microsoft Azure Fundamentals</h3><p class="pill ok">Certified 2024</p></div>
         <div class="cred"><p class="code">SC-900</p><h3>Security, Compliance, and Identity Fundamentals</h3><p class="pill ok">Certified 2023</p></div>
       </div>
@@ -1138,15 +1248,17 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       <div class="prose">
         <p class="eyebrow">About me</p>
         <h2 id="about-title">Making IT simple, secure and automated</h2>
-        <p>I'm Arth, an IT professional based in Toronto. For five years I've been the on-site technical lead at large organizations, supporting executives, running site infrastructure and managing who can access what. Each role has been a step up from the last, and I've enjoyed every one.</p>
-        <p>Identity and access is where I started, and it's still where I do some of my best work: Microsoft Entra ID, Privileged Identity Management, access reviews and Conditional Access, plus clean SOX access audits. Along the way I added the network side, working with NetOps and Juniper Mist at Walmart and running an Ekahau survey for a new McCain office, and unified communications on-site at McCain.</p>
-        <p>I also like to build. I've written PowerShell since Deloitte, long before AI tools, and today I pair it with Claude Code and GitHub, with a person approving every change. Travel has been part of the job too, from Bentonville to Florenceville-Bristol, and I enjoy it. I finished my computer science degree with a 3.88 GPA while working full-time, and I'm ready to bring all of it to an Information Systems Engineer role.</p>
+        <p>I'm Arth, an IT professional based in Toronto. For five years I've kept IT running at large organizations, three of those years as the on-site technical lead at global companies: supporting executives, running site infrastructure and managing who can access what. Each role has been a step up from the last, and I've enjoyed every one.</p>
+        <p>Identity and access is where I started, and it's still where I do some of my best work: Microsoft Entra ID, Privileged Identity Management, access reviews and Conditional Access, plus clean SOX access audits. Along the way I added the network side, working with NetOps and Juniper Mist at Walmart and running an Ekahau survey for a new McCain office, and Teams Rooms work with McCain's UC engineering team.</p>
+        <p>Lately I've been working with data. I got 443 ServiceNow knowledge articles ready for an AI library, traced a six-record gap between two APIs, and removed personal details before anything reached an AI tool. I check every number against the source.</p>
+        <p>I also like to build. I've automated with PowerShell since 2022, and today I pair it with Claude Code, MCP and GitHub, with a person approving every change. Travel has been part of the job too, from Bentonville to Florenceville-Bristol, and I enjoy it. I finished my computer science degree with a 3.88 GPA while working full-time, and I'm ready to bring all of it to an Information Systems Engineer role.</p>
       </div>
       <ul class="principles">
         <li><h3>Access should be temporary</h3><p>Admin rights are requested, approved and time-limited, never permanent by default.</p></li>
         <li><h3>Security shouldn't slow people down</h3><p>The best controls protect the business without getting in anyone's way.</p></li>
         <li><h3>Automate what repeats</h3><p>If a task comes up twice, I script it and document it.</p></li>
-        <li><h3>AI does the legwork, people approve</h3><p>Every AI-assisted change is reviewed before it runs, and results are checked against a manual baseline.</p></li>
+        <li><h3>Every number traces to the source</h3><p>Figures are rebuilt from raw exports, so anyone can check them.</p></li>
+        <li><h3>AI gets only what it needs, and people approve</h3><p>Personal details are removed before data reaches an AI tool, and every AI-assisted change is reviewed before it runs.</p></li>
       </ul>
     </div>
   </section>
@@ -1158,7 +1270,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         <div class="copy">
           <p class="eyebrow">PS C:\&gt; Request-Interview</p>
           <h2 id="contact-title">Hiring an Information Systems Engineer?</h2>
-          <p>I'm based in Toronto, open to roles in Toronto, Vancouver, Calgary and Ottawa, and happy to travel for work. Email is the fastest way to reach me.</p>
+          <p>I'm based in Toronto, open to roles in Toronto, Vancouver, Calgary and Ottawa, willing to relocate and happy to travel for work. Email is the fastest way to reach me.</p>
         </div>
         <div class="side-actions">
           <div class="actions">
@@ -1170,6 +1282,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
               LinkedIn</a>
           </div>
           <p class="mail" data-mail><a class="addr" href="mailto:arththakkar186@gmail.com">arththakkar186@gmail.com</a><button class="linkbtn" type="button" data-copy-email>Copy email</button></p>
+          <p class="mail"><a class="addr" href="tel:+19059710672">905-971-0672</a></p>
         </div>
       </div>
     </div>
@@ -1233,6 +1346,33 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     syncTheme();
   });
 
+  /* ---------- scrollspy: highlight the nav link for the section in view ---------- */
+  safely(function(){
+    var nav = document.querySelector(".nav");
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+    if (!nav || !links.length || !("IntersectionObserver" in window)) return;
+    var byId = {};
+    links.forEach(function(a){ byId[a.getAttribute("href").slice(1)] = a; });
+    function mark(id){
+      var active = id ? byId[id] : null;
+      links.forEach(function(a){
+        if (a === active) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      });
+      if (active && nav.scrollWidth > nav.clientWidth) {
+        var nr = nav.getBoundingClientRect(), ar = active.getBoundingClientRect();
+        if (ar.left < nr.left || ar.right > nr.right) nav.scrollLeft += ar.left - nr.left - 12;
+      }
+    }
+    var opts = { rootMargin: "-40% 0px -55% 0px" };
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
+    }, opts);
+    Object.keys(byId).forEach(function(id){ var s = document.getElementById(id); if (s) io.observe(s); });
+    var hero = document.querySelector(".hero");
+    if (hero) new IntersectionObserver(function(en){ if (en[0].isIntersecting) mark(null); }, opts).observe(hero);
+  });
+
   /* ---------- toast and copy email ---------- */
   var toastEl = document.querySelector(".toast"), toastTimer, clearTimer;
   function toast(msg){
@@ -1248,7 +1388,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
   safely(function(){
     function selectAddress(btn){
       var scope = btn.closest("[data-mail]");
-      var all = document.querySelectorAll(".addr");
+      var all = document.querySelectorAll("[data-mail] .addr");
       var addr = (scope && scope.querySelector(".addr")) || all[all.length - 1];
       if (!addr) return;
       try {
@@ -1264,6 +1404,21 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         } else {
           selectAddress(btn);
         }
+      });
+    });
+  });
+
+  /* ---------- redaction sample: toggle between the original and the redacted text ---------- */
+  safely(function(){
+    Array.prototype.forEach.call(document.querySelectorAll("[data-redact]"), function(btn){
+      var box = btn.closest(".sample");
+      var txt = box && box.querySelector(".sample-txt");
+      if (!txt) return;
+      btn.hidden = false;
+      btn.addEventListener("click", function(){
+        var redacted = txt.getAttribute("data-redacted") === "true";
+        txt.setAttribute("data-redacted", redacted ? "false" : "true");
+        btn.textContent = redacted ? "Apply redaction" : "Show original";
       });
     });
   });
@@ -1373,13 +1528,15 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       return out;
     }
 
-    var NAMES = ["Get-Candidate","Get-Journey","Get-Experience","Get-Impact","Get-Skills","Get-Certification","Get-Location","Test-NetConnection","Get-PimRoleSetting","Start-SiteSurvey","Get-Resume","Request-Interview","Get-Date","Clear-Host","help"];
+    var NAMES = ["Get-Candidate","Get-Journey","Get-Experience","Get-Impact","Get-KnowledgeLibrary","Compare-ApiCount","Get-Skills","Get-Certification","Get-Location","Test-NetConnection","Get-PimRoleSetting","Start-SiteSurvey","Get-Resume","Request-Interview","Get-Date","Clear-Host","help"];
     var CMD = {
       "help": function(args, fmt){ return table(["Command","What it shows"], [
         ["Get-Candidate","Profile and target role"],
         ["Get-Journey","How each role stepped up"],
         ["Get-Experience","Five roles, newest first"],
         ["Get-Impact","Results I can measure"],
+        ["Get-KnowledgeLibrary","443 articles made AI-ready"],
+        ["Compare-ApiCount","Tracing a 6-record gap"],
         ["Get-Skills","Tools I use, by area"],
         ["Get-Certification","Certifications, degrees"],
         ["Get-Location","Where I can work, travel"],
@@ -1392,8 +1549,9 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       "get-candidate": function(){ return kv([
         ["Name","Arth Thakkar"],
         ["Role","Senior Systems Specialist, Extreme Networks"],
-        ["Focus","Entra ID, M365, Intune, networks, automation"],
-        ["Experience","5+ years, organizations of 10,000 to 20,000+ users"],
+        ["Focus","Entra ID, M365, Intune, networks, ServiceNow, AI automation"],
+        ["Experience","5+ years, 3 as on-site technical lead at global companies"],
+        ["Scale","Organizations of 10,000 to 20,000+ users"],
         ["Location","Toronto, ON (open to Vancouver, Calgary, Ottawa)"],
         ["Travel","Happy to travel for work"],
         ["Seeking","Information Systems Engineer"],
@@ -1403,7 +1561,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         ["2022","Deloitte","PowerShell for weekly new hires"],
         ["2023","Walmart","First site lead, NetOps and Mist"],
         ["2024","McCain Foods","Executive support, PIM, UC"],
-        ["2025","Extreme Networks","Whole site, SOX, AI automation"],
+        ["2025","Extreme Networks","Whole site, SOX, AI-ready data"],
         ["Next","Your organization","Information Systems Engineer"]], fmt); },
       "get-experience": function(args, fmt){ return table(["Start","Role","Company"], [
         ["2025","Senior Systems Specialist","Extreme Networks"],
@@ -1414,20 +1572,37 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       "get-impact": function(args, fmt){ return table(["Metric","Value","Where"], [
         ["SOX audit coverage","10,000+","Extreme Networks"],
         ["AI vs manual review match","100%","Extreme Networks"],
+        ["Privacy redactions","1,028","Extreme Networks"],
         ["Provisioning errors","-40%","Walmart"],
         ["Incidents resolved a month","1,000+","Walmart"],
         ["Access-related incidents","-35%","Audcomp"],
         ["BSc Computer Science GPA","3.88","UMGC"]], fmt); },
+      "get-knowledgelibrary": function(){ return kv([
+        ["Goal","One trusted SharePoint library for AI and employees"],
+        ["Exported","478 article records, read-only via Claude Code + MCP"],
+        ["Removed","35 expired or superseded versions"],
+        ["Current","443 articles"],
+        ["FieldsSent","5 per record"],
+        ["Redactions","1,028 (emails, phones, IPs, internal links, names)"],
+        ["SignOff","Review report, human approval"]]); },
+      "compare-apicount": function(args, fmt){
+        return table(["Source","Links"], [["Aggregate API","834"],["Table API","828"]], fmt).concat([["", ""]], kv([
+          ["Gap","6 records"],
+          ["RuledOut","Duplicates, filters, deletions"],
+          ["Cause","Row-level access controls (ACLs)"],
+          ["Fix","Rebuilt every figure from checksummed raw exports"],
+          ["Status",'<span class="okl">Verified</span>', true]])); },
       "get-skills": function(){ return kv([
         ["Identity","Entra ID, Active Directory, PIM, Conditional Access"],
         ["Endpoint","Intune, Jamf Pro, SCCM, Apple Business Manager"],
         ["Network","Switching, fabric, Wi-Fi, Juniper Mist, Ekahau"],
         ["UC","Teams Rooms, Zoom Rooms, executive town halls"],
         ["Servers","Windows Server, patching, Veeam, Barracuda"],
-        ["Automation","PowerShell, Microsoft Graph, Claude Code, GitHub"],
-        ["ITSM","ServiceNow, ITIL, CMDB, HAM Pro, knowledge base"]]); },
+        ["Automation","PowerShell, Python, Graph API, Claude Code, MCP, Workato"],
+        ["Data","Reconciliation, PII redaction, regex, JSON, CSV"],
+        ["ITSM","ServiceNow APIs, ITIL, CMDB, HAM Pro, knowledge"]]); },
       "get-certification": function(){ return kv([
-        ["SC-300","Identity and Access Administrator, exam pending"],
+        ["SC-300","Identity and Access Administrator, exam in preparation"],
         ["AZ-900","Azure Fundamentals, 2024"],
         ["SC-900","Security, Compliance, and Identity Fundamentals, 2023"],
         ["BSc","Computer Science, UMGC, 2026, GPA 3.88"],
@@ -1478,7 +1653,7 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
         'Get-Candidate -Name "Arth Thakkar" | Format-List',
         narrow ? "Get-Journey | Format-List" : "Get-Journey | Format-Table -AutoSize",
         narrow ? "Get-Impact | Format-List" : "Get-Impact | Format-Table -AutoSize",
-        "Test-NetConnection core-fabric.tor.local -Port 443",
+        "Compare-ApiCount -Source ServiceNow",
         'Request-Interview -Candidate "Arth Thakkar"'
       ];
     }
@@ -1611,19 +1786,19 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
     var APS = [
       {id:"wmt", name:"Walmart Global Tech", short:"Walmart", x:180, y:150, months:15,
        role:"System Support Specialist II (Technical Site Lead)", when:"May 2023 to Aug 2024",
-       note:"My first site lead role. Owned the identity lifecycle for 5,000+ identities, cut provisioning errors by 40%, worked with NetOps on switches and access points in Juniper Mist, and travelled to Bentonville, AR to host town halls."},
+       note:"My first site lead role. Owned the identity lifecycle for 5,000+ identities, cut provisioning errors by 40%, led CMDB inventory audits, worked with NetOps on switches and access points in Juniper Mist, and travelled to Bentonville, AR to host town halls."},
       {id:"ext", name:"Extreme Networks", short:"Extreme", x:500, y:150, months:15, current:true,
        role:"Senior Systems Specialist (Infrastructure Site Lead)", when:"Sep 2025 to present",
-       note:"Runs the Toronto site with no local network team, co-owns SOX access audits for 10,000+ users, and builds AI-assisted automation in PowerShell and Claude Code."},
+       note:"Runs the Toronto site with no local network team, co-owns SOX access audits for 10,000+ accounts, and got 443 ServiceNow knowledge articles ready for AI with 1,028 privacy redactions."},
       {id:"mcc", name:"McCain Foods", short:"McCain", x:820, y:150, months:13,
        role:"Regional Technology Specialist (IT Operations Site Lead)", when:"Aug 2024 to Sep 2025",
-       note:"Moved admin roles to just-in-time access in Entra PIM, ran the Ekahau survey for a new office, supported UC engineering on-site, and travelled to Florenceville-Bristol, NB to host town halls."},
+       note:"Moved admin roles to just-in-time access in Entra PIM, ran the Ekahau survey for a new office, ran Teams Rooms with the UC engineering team, and travelled to Florenceville-Bristol, NB to host town halls."},
       {id:"aud", name:"Audcomp", short:"Audcomp", x:140, y:545, months:6,
        role:"Systems Administrator (Identity and Access Management)", when:"Oct 2021 to Mar 2022",
-       note:"Where it started. Redesigned roles and security groups for 10+ MSP clients, cutting access-related incidents by 35%."},
+       note:"Where it started. Redesigned roles and security groups for 10+ MSP clients, including the City of Hamilton and ZipRecruiter, cutting access-related incidents by 35%."},
       {id:"del", name:"Deloitte", short:"Deloitte", x:390, y:545, months:13,
        role:"Information Technology Analyst", when:"Apr 2022 to May 2023",
-       note:"Wrote PowerShell, before AI tools, to set passwords for hundreds of new hires a week, and ran joiner-mover-leaver for a 10,000-user practice."},
+       note:"Automated password setup for hundreds of new hires a week with PowerShell, and ran joiner-mover-leaver for a 10,000-user practice."},
       {id:"next", name:"Your organization", short:"Next install", x:870, y:545, months:0, next:true,
        role:"Information Systems Engineer", when:"Ready when you are",
        note:"This room has no coverage yet. I'm looking for my next site in Toronto, Vancouver, Calgary or Ottawa."}
@@ -1807,35 +1982,39 @@ h3{font:700 clamp(20px,2vw,24px)/1.15 var(--display);font-stretch:108%;letter-sp
       aud:  ["Audcomp (MSP)", "Systems Administrator, IAM · 2021 to 2022"],
       mise: ["MISE capstone", "AI Cloud Lead, UMGC · 2026"]
     };
-    var DEVICES = "Reconcile ServiceNow asset records against Intune, Jamf Pro and SCCM during the Evergreen refresh.";
     var ENDPOINTS = "Secured Windows and macOS endpoints with SCCM and Jamf Pro.";
     var SKILLS = {
-      entra:   ["Microsoft Entra ID", [["ext","Govern hybrid Active Directory and Entra ID with least privilege, backed by monthly SOX ITGC access audits for 10,000+ users."],["mcc","Ran Entra PIM for Entra ID and Azure roles, and built Entra ID Governance access packages and access reviews."],["aud","Set up identity for Microsoft 365 and Azure client tenants, redesigning roles and security groups."]]],
-      pim:     ["Privileged Identity Management", [["mcc","Converted standing admin access to eligible, just-in-time activation with approval, MFA, justification and time limits."]]],
-      reviews: ["Access reviews and packages", [["mcc","Built access packages and recurring access reviews for privileged roles, groups and guest users."]]],
+      entra:   ["Microsoft Entra ID", [["ext","Govern hybrid Active Directory and Entra ID with least privilege, collecting evidence and removing excess access in monthly SOX ITGC audits for 10,000+ accounts."],["mcc","Moved Entra ID and Azure admin roles to just-in-time activation in PIM, and built Entra ID Governance access packages and access reviews."],["aud","Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients."]]],
+      pim:     ["Privileged Identity Management", [["mcc","Replaced standing admin access with just-in-time activation requiring approval, MFA, justification and a time limit, giving auditors a record of who used admin rights and why."]]],
+      reviews: ["Access reviews and packages", [["mcc","Built access packages and recurring access reviews for privileged roles, groups and guest users, giving people one standard way to request access and removing it once no longer needed."]]],
       mfa:     ["MFA", [["mcc","Required MFA, approval and justification for every privileged role activation in Entra PIM."]]],
-      ad:      ["Active Directory", [["ext","Govern hybrid Active Directory and Entra ID with least privilege."],["wmt","Owned the identity lifecycle for 5,000+ identities in a 20,000+ user hybrid environment."]]],
-      jml:     ["Joiner-mover-leaver", [["wmt","Standardized joiner-mover-leaver processes and account templates, cutting provisioning errors by 40%."],["del","Ran joiner-mover-leaver for a 10,000-user practice, and scripted first-day passwords for hundreds of new hires a week."]]],
-      sox:     ["SOX ITGC", [["ext","Co-own monthly SOX ITGC access audits for 10,000+ users with zero missed audit cycles, and piloted a Claude-assisted evidence review that matched the manual review 100% in a side-by-side test."]]],
-      graph:   ["Microsoft Graph and app registrations", [["ext","Work with our IT automation lead on app registrations for AI integrations: delegated permissions when a person drives the task, and certificate-based service principals for unattended ServiceNow jobs."]]],
-      intune:  ["Microsoft Intune", [["mcc","Designed compliance, configuration and app-protection policies for the corporate iOS fleet, from Apple Business Manager enrolment to retirement."],["ext",DEVICES]]],
-      jamf:    ["Jamf Pro", [["ext",DEVICES],["wmt",ENDPOINTS]]],
-      sccm:    ["SCCM", [["ext",DEVICES],["wmt",ENDPOINTS]]],
-      m365:    ["Microsoft 365", [["aud","Set up Microsoft 365 and Azure configurations, licensing and identity for 10+ clients."],["del","Supported partners and senior leaders on Microsoft 365 and Teams meeting rooms at 95% customer satisfaction."]]],
-      defender:["Microsoft Defender and EDR", [["aud","Deployed Defender and EDR baselines to meet government audit requirements for public-sector clients."]]],
-      ps:      ["PowerShell", [["ext","Build scheduled and API-connected automation with PowerShell, Claude Code and ServiceNow workflows."],["del","Wrote scripts, before AI tools, that set passwords for hundreds of new hires a week, and automated Tier 2 and Tier 3 access fixes."]]],
-      claude:  ["Claude Code, MCP and GitHub", [["ext","Build automations with Claude Code and MCP servers in version-controlled GitHub repositories, with human approval before changes run. Piloted a Claude-assisted SOX evidence review that matched the manual review 100%."],["mise","Built the platform in shared GitHub repositories with a 6-person team."]]],
-      bedrock: ["AWS Bedrock", [["mise","Runs Claude menu recommendations on AWS Bedrock."]]],
-      snow:    ["ServiceNow", [["ext","Use ServiceNow workflows for automation, analyze RITM and incident exports for SOX audits, and keep HAM Pro and CMDB asset records reconciled."],["wmt","Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits."]]],
-      kb:      ["Knowledge documentation", [["ext","Write IT knowledge articles with Claude, and I'm building a workflow that compares ServiceNow knowledge articles with source documentation and flags gaps."],["del","Rebuilt the knowledge base and escalation procedures, and trained staff on applications and security practices."]]],
-      net:     ["Switching and fabric", [["ext","On-site network lead with no local NetOps staff, from switch installs and edge-to-core fabric links to wireless access points."],["wmt","Partnered with NetOps on switches and access points at the site."]]],
-      wifi:    ["Wireless, Mist and Ekahau", [["mcc","Ran an Ekahau wireless survey and produced the heat maps when a new office opened."],["wmt","Handled basic access point management in the Juniper Mist cloud portal, working alongside NetOps."],["ext","Keep the site's wireless access points online."]]],
-      server:  ["Windows Server", [["ext","Monitor, patch and maintain the site's Windows servers."]]],
-      backup:  ["Backup and recovery", [["ext","Run backup test restores to confirm the site can recover."],["aud","Designed backup and recovery with Barracuda, Veeam and Microsoft cloud backup, with quarterly audits and cloud-to-cloud restores."]]],
-      exec:    ["Executive support", [["ext","Primary face of IT for the Canadian office, supporting senior leadership."],["mcc","Go-to technology contact for C-suite and global executives at the Toronto head office."],["del","Supported partners and senior leaders at 95% customer satisfaction."]]],
-      uc:      ["Unified communications", [["mcc","On-site support for the UC engineering team, which deepened my knowledge of unified communications and Teams Rooms."],["ext","Own Teams Rooms and Zoom Rooms for hybrid meetings and town halls."]]],
-      travel:  ["Travel and town halls", [["mcc","Travelled to Florenceville-Bristol, NB to host executive town halls on-site, recognized by senior executives."],["wmt","Travelled to Bentonville, AR to host town halls, earning praise from senior leadership."]]],
-      vendor:  ["Vendor management", [["ext","Run the Evergreen hardware refresh with 5 vendors: Dell, Apple, Lenovo, SHI and CDW."],["mcc","Handled vendor pricing, warranty claims and the Evergreen refresh for the site."]]]
+      ad:      ["Active Directory", [["ext","Govern hybrid Active Directory and Entra ID with least privilege across 10,000+ accounts."],["wmt","Owned the identity lifecycle for 5,000+ identities in a hybrid environment of 20,000+ users."]]],
+      jml:     ["Joiner-mover-leaver", [["wmt","Standardized joiner-mover-leaver with account and group templates, later used for new sites, cutting provisioning errors by 40%."],["del","Managed joiner-mover-leaver for a 10,000-user practice, coordinating hardware, software and badge access with Facilities."]]],
+      sox:     ["SOX ITGC", [["ext","Co-own monthly SOX ITGC access audits for 10,000+ accounts with zero missed cycles, and built a Claude-assisted evidence review that matched the manual review 100% in a side-by-side pilot."]]],
+      graph:   ["App registrations and Microsoft Graph", [["ext","Weekly architecture sessions with the IT automation lead on Entra app registrations for AI integrations, including when to use delegated access and when to use certificate-based access, plus security reviews."]]],
+      recon:   ["Data reconciliation", [["ext","Traced a 6-record gap between the ServiceNow Aggregate and Table APIs (834 vs 828 links) to row-level access controls after ruling out duplicates, filters and deletions, then rebuilt every figure from checksummed raw exports."],["wmt","Led ServiceNow CMDB inventory audits to keep asset records accurate."]]],
+      pii:     ["PII redaction and data minimization", [["ext","Set the privacy rules for sending articles to an AI tool: 5 fields per record, with emails, phone numbers, IP addresses, internal links and personal names removed. The pass made 1,028 redactions across 443 articles, with a review report for sign-off."]]],
+      analysis:["Ticket and data analysis", [["ext","Ranked 443 articles by linked tickets across 4,669 category, CI and catalog groups, and found that local admin rights requests are about two-thirds of all service requests, 34,000+ a year."]]],
+      ps:      ["PowerShell", [["ext","Develop AI-assisted automation with PowerShell, Claude Code and ServiceNow workflows, run in approval mode."],["del","Automated password setup for hundreds of new hires each week, replacing manual account setup, and automated common Tier 2 and Tier 3 access fixes."]]],
+      claude:  ["Claude Code, MCP and GitHub", [["ext","Exported 478 ServiceNow knowledge records read-only through Claude Code and an MCP server, and build automations in GitHub with human sign-off on every change."],["mise","Built the platform in shared GitHub repositories with a 6-person team."]]],
+      snow:    ["ServiceNow and its APIs", [["ext","Use the ServiceNow Table and Aggregate APIs, analyze RITM and incident exports for SOX audits, and ranked knowledge articles by linked tickets."],["wmt","Resolved 1,000+ incidents a month at 100% SLA compliance and led CMDB inventory audits."]]],
+      workato: ["Workato and REST APIs", [["ext","Weekly architecture sessions with the IT automation lead on MCP and REST integrations through Workato."]]],
+      bedrock: ["AWS Bedrock", [["mise","Led AI and cloud work, with menu recommendations powered by Claude on AWS Bedrock."]]],
+      kb:      ["Knowledge management", [["ext","Prepared 443 current ServiceNow knowledge articles for one trusted SharePoint library for AI assistants and employees."],["del","Rebuilt the knowledge base and escalation procedures so recurring issues were solved the same way every time, and trained staff on applications and security practices."]]],
+      rca:     ["Root cause analysis", [["ext","Lead root cause analysis with Oracle IT and HR on failed business-critical workflow automations, and coordinate the fixes."],["wmt","Improved global triage efficiency by 25% by finding and fixing the root causes of repeat issues."]]],
+      intune:  ["Microsoft Intune", [["mcc","Designed and enforced compliance, configuration and app protection policies for the corporate iOS fleet, from Apple Business Manager enrolment to retirement."]]],
+      jamf:    ["Jamf Pro", [["wmt",ENDPOINTS]]],
+      sccm:    ["SCCM", [["wmt",ENDPOINTS]]],
+      m365:    ["Microsoft 365", [["aud","Redesigned roles and security groups across Microsoft 365 and Azure tenants for 10+ clients, including the City of Hamilton, City of Burlington and ZipRecruiter."],["del","Supported partners and senior leaders on devices, Microsoft 365 and Teams Rooms, earning a 95% customer satisfaction score."]]],
+      defender:["Microsoft Defender and EDR", [["aud","Deployed Microsoft Defender and EDR baselines that helped public-sector clients meet government audit requirements."]]],
+      net:     ["Switching and fabric", [["ext","Install switches and connect them to the core fabric for the Toronto office, with no local NetOps team."],["wmt","Partnered with NetOps on switches and access points."]]],
+      wifi:    ["Wireless, Mist and Ekahau", [["mcc","Ran an Ekahau wireless site survey for a new office and produced heat maps the network team used to plan Wi-Fi coverage."],["wmt","Worked with NetOps on access points in the Juniper Mist portal."],["ext","Maintain the site's wireless access points."]]],
+      server:  ["Windows Server", [["ext","Patch and monitor the site's Windows servers."]]],
+      backup:  ["Backup and recovery", [["ext","Run test restores to prove backups can be recovered."],["aud","Designed and managed client backup and recovery with Barracuda, Veeam and Microsoft cloud backup, with quarterly audits and cloud-to-cloud restores."]]],
+      exec:    ["Executive support", [["ext","Primary IT contact for the Canadian office and its senior leadership."],["mcc","Primary technology contact for C-suite and global executives at the Toronto head office, and sole liaison to global IT infrastructure teams."],["del","Supported partners and senior leaders at 95% customer satisfaction."]]],
+      uc:      ["Unified communications", [["mcc","Ran the Teams Rooms setup for executive town halls with the UC engineering team."],["ext","Support senior leadership and town halls in Teams Rooms and Zoom Rooms."]]],
+      travel:  ["Travel and town halls", [["mcc","Hosted executive town halls on-site in Florenceville-Bristol, NB, and was recognized by senior executives for the delivery."],["wmt","Travelled to Bentonville, AR to host town halls, earning praise from senior leadership."]]],
+      vendor:  ["Vendor management", [["ext","Run the Evergreen hardware refresh with 5 vendors: Dell, Apple, Lenovo, SHI and CDW."]]]
     };
     var chips = Array.prototype.slice.call(document.querySelectorAll(".chip"));
     var evSkill = document.getElementById("ev-skill");
